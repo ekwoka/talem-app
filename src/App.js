@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import logo from './logo.svg';
 import './index.css';
-import Header from './Components/Header';
+import HeroMain from './Components/HeroMain';
+
 
 
 function App() {
   return (
     <>
-      <Header />
+      <HeroMain />
     </>
   );
 }
