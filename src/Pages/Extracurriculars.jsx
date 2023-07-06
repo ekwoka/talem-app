@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Components/Header";
 import {useState} from "react"
-import { PlusCircleIcon } from '@heroicons/react/24/outline'
+import { PlusCircleIcon, MinusCircleIcon } from '@heroicons/react/24/outline'
 
 export default function Extracurriculars() {
 
@@ -40,9 +40,9 @@ export default function Extracurriculars() {
 
                         {/* Sort by Grade */}
                         <div className="w-11/12 border-y-2 border-slate-400 h-max p-3 flex flex-col">
-                            <div className="text-lg p-1 flex justify-between items-center" onClick={handleGrade}>
+                            <div className="text-lg p-1 flex justify-between items-center font-outfit" onClick={handleGrade}>
                                 Sort by Grade:
-                                {<PlusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer hover:animate-spin"/>}
+                                {showGrade ? <MinusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/> : <PlusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/>}
                             </div>
 
                             {showGrade && 
@@ -50,7 +50,7 @@ export default function Extracurriculars() {
                                 <div className="w-full mt-5">
                                     <div class="flex items-center mb-4">
                                         <input id="grade9" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label for="grade9" class="ml-2 text-lg-gray-900 dark:text-gray-300 font-medium">Freshman</label>
+                                        <label for="grade9" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Freshman</label>
                                     </div>
                                 </div>
 
@@ -59,21 +59,21 @@ export default function Extracurriculars() {
                                 <div className="w-full">
                                     <div class="flex items-center mb-4">
                                         <input id="grade10" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label for="grade10" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium">Sophomore</label>
+                                        <label for="grade10" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Sophomore</label>
                                     </div>
                                 </div>
 
                                 <div className="w-full">
                                     <div class="flex items-center mb-4">
                                         <input id="grade11" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label for="grade11" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium">Junior</label>
+                                        <label for="grade11" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Junior</label>
                                     </div>
                                 </div>
 
                                 <div className="w-full">
                                     <div class="flex items-center mb-4">
                                         <input id="grade12" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label for="grade12" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium">Senior</label>
+                                        <label for="grade12" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Senior</label>
                                     </div>
                                 </div>
                                 </>
