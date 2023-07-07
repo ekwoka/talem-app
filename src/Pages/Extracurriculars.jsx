@@ -86,7 +86,7 @@ export default function Extracurriculars() {
 
                     {/* Normal Filters (Miscellaneous Things)*/}
                     <div className="col-span-1">
-                        <div className="shadow-lg rounded-lg flex flex-col justify-center items-center py-4">
+                        <div className="shadow-[0_0_10px_-7px] rounded-lg flex flex-col justify-center items-center py-4">
 
                             {/* Grade Filters */}
                             <div className="filter">
@@ -244,7 +244,7 @@ export default function Extracurriculars() {
                         </div>
                         
                         {/* Subject Filters*/}
-                        <div className="shadow-lg rounded-lg flex flex-col justify-center items-center py-4 mt-4">
+                        <div className="shadow-[0_0_10px_-7px] rounded-lg flex flex-col justify-center items-center py-4 mt-4">
 
                             {/* Programming/Tech Filters*/}
                             <div className="filter bg-red-300">
@@ -451,8 +451,8 @@ export default function Extracurriculars() {
                                     <>
                                     <div className="w-full mt-5">
                                         <div class="flex items-center mb-4">
-                                            <input id="philosiphy" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="philosiphy" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Philosiphy</label>
+                                            <input id="philosophy" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                            <label htmlFor="philosophy" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Philosophy</label>
                                         </div>
                                     </div>                            
 
@@ -514,7 +514,24 @@ export default function Extracurriculars() {
                     </div>
                     
 
-                    <div className="col-span-3 bg-red-300">Hi again</div>
+                    <div className="col-span-3 shadow-[0_0_10px_-7px]">
+                        
+                            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                            <div class="relative flex">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-10 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                    </svg>
+                                </div>
+                                <div className="w-full p-7">
+                                    <input type="search" id="default-search" class="w-full p-4 pl-10 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-outfit" placeholder="Search for a specific extracurricular (Ex: Robotics)" required />
+                                    
+                                </div>
+                                
+                            </div>
+
+                    </div>
+
                 </div>
 
 
