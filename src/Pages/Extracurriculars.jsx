@@ -9,11 +9,12 @@ export default function Extracurriculars() {
     let [dropState, setDropState] = useState({
         settingState: false,
         gradeState: false,
-        locationState: false,
+        environmentState: false,
         companyState : false,
         durationState: false,
         teamIndividualState: false,
         skillLevelState: false,
+        locationState: false,
         programmingState: false,
         engineeringState: false,
         mathScienceState: false,
@@ -60,6 +61,14 @@ export default function Extracurriculars() {
         {id: "advancedlevel", text: "Advanced"},
     ]
 
+    let locationItems = [
+        {id: "eastcoast", text: "East Coast (USA)"},
+        {id: "westcoast", text: "West Coast (USA)"},
+        {id: "midwest", text: "MidWest (USA)"},
+        {id: "allusa", text: "All of US"},
+        {id: "international", text: "International"},
+    ]
+
     function handleGrade(name) {
         setDropState((prevArray) => {
             return {
@@ -95,6 +104,8 @@ export default function Extracurriculars() {
                 <div className="grid grid-cols-4 h-max gap-4">
 
                     {/* Column Span 1 items */}
+
+                    {/* Button Settings Filters */}
                     <div className="col-span-1">
 
                         <div className="shadow-[0_0_10px_-7px] rounded-lg flex flex-col justify-center items-center py-4 mb-4">
@@ -144,14 +155,14 @@ export default function Extracurriculars() {
 
                             </div>
                         
-                            {/* Location Filters */}
+                            {/* Environment Filters */}
                             <div className="filter">
-                                <div className="filter-title" onClick={() => handleGrade("locationState")}>
+                                <div className="filter-title" onClick={() => handleGrade("environmentState")}>
                                     Work Environment <br /> (In Person/Remote)
-                                    {dropState.locationState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
+                                    {dropState.environmentState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
                                 </div>
 
-                                {dropState.locationState && 
+                                {dropState.environmentState && 
                                     <>
                                     <div className="w-full">
                                         <div class="flex items-center mb-4">
@@ -257,6 +268,31 @@ export default function Extracurriculars() {
                                 {dropState.skillLevelState && 
                                     <>
                                         {skillLevelItems.map((item) => { 
+                                            return (
+                                                <div className="w-full">
+                                                    <div class="flex items-center mb-4">
+                                                        <input id={item.id} type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                    </>
+                                }
+
+
+                            </div>
+
+                            {/* Location Filters */}
+                            <div className="filter">
+                                <div className="filter-title" onClick={() => handleGrade("locationState")}>
+                                    Activity/EC Location
+                                    {dropState.locationState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
+                                </div>
+
+                                {dropState.locationState && 
+                                    <>
+                                        {locationItems.map((item) => { 
                                             return (
                                                 <div className="w-full">
                                                     <div class="flex items-center mb-4">
