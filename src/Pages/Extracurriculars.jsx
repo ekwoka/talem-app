@@ -21,6 +21,15 @@ export default function Extracurriculars() {
         humanityArtState: false
     })
 
+    function changeAllDropdownState(bool) {
+        const updatedDropState = Object.fromEntries(
+          Object.entries(dropState).map(([key]) => [key, bool])
+        );
+      
+        setDropState(updatedDropState);
+      }
+      
+
     let gradeItems = [
         {id: "grade9", text: "Freshman"},
         {id: "grade10", text: "Sophomore"},
@@ -98,8 +107,8 @@ export default function Extracurriculars() {
                                     {dropState.settingState && 
                                         <>
                                             <div className="w-full p-3 my-2 flex flex-col justify-center items-center gap-4">
-                                                <button className="w-9/12 bg-blue-500 p-3 rounded-md shadow-md font-outfit text-white flex justify-between">Close All Filters <XCircleIcon className="dropdown-main"/></button>
-                                                <button className="w-9/12 bg-blue-500 p-3 rounded-md shadow-md font-outfit text-white flex justify-between">Open All Filters <PlusCircleIcon className="dropdown-main"/></button>
+                                                <button className="w-9/12 bg-blue-500 p-3 rounded-md shadow-md font-outfit text-white flex justify-between" onClick={() => changeAllDropdownState(false)}>Close All Filters <XCircleIcon className="dropdown-main"/></button>
+                                                <button className="w-9/12 bg-blue-500 p-3 rounded-md shadow-md font-outfit text-white flex justify-between" onClick={() => changeAllDropdownState(true)}>Open All Filters <PlusCircleIcon className="dropdown-main"/></button>
                                             </div>
                                         </>                                    
                                     }
@@ -557,20 +566,7 @@ export default function Extracurriculars() {
                 </div>
 
 
-                <div className="mx-auto max-w-4xl py-32 sm:py-48 lg:py-56"></div>
-                <div
-                    className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-                    aria-hidden="true"
-                >
-                    
-                    <div
-                    className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#bcdbe4] to-[#5d9ba7] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-                    style={{
-                        clipPath:
-                        'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                    }}
-                    />
-                </div>
+
                 </div>
             </div>
         </>
