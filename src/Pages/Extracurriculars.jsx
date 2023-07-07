@@ -632,6 +632,10 @@ export default function Extracurriculars(props) {
                                                     })}
                                                 </div>
                                             </div>
+                                            <div className="col-span-1 p-10 flex flex-col gap-4 justify-evenly">
+                                                <img src={ec.src} alt={`Picture of ${ec.name} logo`} className="w-full shadow-md rounded-xl"/>
+                                                <button className="w-full px-10 py-2 bg-blue-500 text-white font-outfit rounded-lg">View Site</button>
+                                            </div>
                                         </div>
                                     ))
                                 )}
