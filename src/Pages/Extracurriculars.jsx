@@ -62,11 +62,12 @@ export default function Extracurriculars() {
     ]
 
     let locationItems = [
+        {id: "global", text: "Global/Worldwide"},
         {id: "eastcoast", text: "East Coast (USA)"},
         {id: "westcoast", text: "West Coast (USA)"},
         {id: "midwest", text: "MidWest (USA)"},
-        {id: "allusa", text: "All of US"},
-        {id: "international", text: "International"},
+        {id: "allusa", text: "All of US"}
+        
     ]
 
     function handleGrade(name) {
