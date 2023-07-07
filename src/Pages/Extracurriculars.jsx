@@ -247,7 +247,7 @@ export default function Extracurriculars() {
                         <div className="shadow-[0_0_10px_-7px] rounded-lg flex flex-col justify-center items-center py-4 mt-4">
 
                             {/* Programming/Tech Filters*/}
-                            <div className="filter bg-red-300">
+                            <div className="filter bg-gradient-to-r from-purple-300 to-purple-600">
                                 <div className="filter-title" onClick={() => handleGrade("programmingState")}>
                                     Programming/Tech 
                                     {dropState.programmingState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
@@ -282,7 +282,7 @@ export default function Extracurriculars() {
                             </div>
 
                             {/* Engineering Filters*/}
-                            <div className="filter bg-red-300">
+                            <div className="filter bg-gradient-to-r from-purple-300 to-purple-600">
                                 <div className="filter-title" onClick={() => handleGrade("engineeringState")}>
                                     Engineering/Design
                                     {dropState.engineeringState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
@@ -317,7 +317,7 @@ export default function Extracurriculars() {
                             </div>
 
                             {/* Math/Science Filters*/}
-                            <div className="filter bg-red-300">
+                            <div className="filter bg-gradient-to-r from-purple-300 to-purple-600">
                                 <div className="filter-title" onClick={() => handleGrade("mathScienceState")}>
                                     Mathematics/Science
                                     {dropState.mathScienceState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
@@ -372,7 +372,7 @@ export default function Extracurriculars() {
                             </div>
 
                              {/* Business/Social */}
-                             <div className="filter bg-red-300">
+                             <div className="filter bg-gradient-to-r from-purple-300 to-purple-600">
                                 <div className="filter-title" onClick={() => handleGrade("businessSocialState")}>
                                     Business/Social Studies
                                     {dropState.businessSocialState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
@@ -441,7 +441,7 @@ export default function Extracurriculars() {
                             </div>
 
                             {/* Humanities/Art */}
-                            <div className="filter bg-red-300">
+                            <div className="filter bg-gradient-to-r from-purple-300 to-purple-600">
                                 <div className="filter-title" onClick={() => handleGrade("humanityArtState")}>
                                     Humanities (+ Art)
                                     {dropState.humanityArtState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
@@ -524,7 +524,7 @@ export default function Extracurriculars() {
                                     </svg>
                                 </div>
                                 <div className="w-full p-7">
-                                    <input type="search" id="default-search" class="w-full p-4 pl-10 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-outfit" placeholder="Search for a specific extracurricular (Ex: Robotics)" required />
+                                    <input type="search" id="default-search" class="w-full p-4 pl-10 text-base text-gray-900 border border-none shadow-xl rounded-lg bg-slate-100 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-outfit" placeholder="Search for a specific extracurricular (Ex: Robotics)" required />
                                     
                                 </div>
                                 
