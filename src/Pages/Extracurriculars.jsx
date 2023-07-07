@@ -599,7 +599,7 @@ export default function Extracurriculars(props) {
                                 
                             </div>
 
-                            <div className="w-full p-4 px-8 h-max flex flex-col gap-2 flex justify-center"> {/* Main EC holder */}
+                            <div className="w-full p-4 px-8 h-max flex-col gap-2 flex justify-center"> {/* Main EC holder */}
                                 {props.ecArray.length === 0 ? (
                                     <>
                                         
@@ -618,13 +618,18 @@ export default function Extracurriculars(props) {
                                             <div className="col-span-3 p-10 flex flex-col gap-4"> {/* Col-span-3 EC info */}
                                                 <h1 className="text-4xl font-outfit">{ec.name}</h1>
                                                 <p className="">{ec.description}</p>
-                                                <div className="w-full flex flex-wrap gap-4">
+                                                <div className="w-full flex flex-wrap gap-3">
                                                     <div className="ec-tag">{ec.commitment}</div>
                                                     <div className="ec-tag">{ec.environment}</div>
                                                     <div className="ec-tag">{ec.grade}</div>
                                                     <div className="ec-tag">{ec.location}</div>
                                                     <div className="ec-tag">{ec.skill}</div>
                                                     <div className="ec-tag">{ec.soloTeam}</div>
+                                                    {ec.subjects.map((subject) => {
+                                                        return (
+                                                            <div className="ec-tag">{subject}</div>
+                                                        )
+                                                    })}
                                                 </div>
                                             </div>
                                         </div>
