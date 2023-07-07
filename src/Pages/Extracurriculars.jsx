@@ -1,12 +1,13 @@
 import React from "react";
 import Header from "../Components/Header";
 import {useState} from "react"
-import { PlusCircleIcon, MinusCircleIcon } from '@heroicons/react/24/outline'
+import { PlusCircleIcon, MinusCircleIcon, AdjustmentsHorizontalIcon, XCircleIcon } from '@heroicons/react/24/outline'
 import '../index.css';
 
 export default function Extracurriculars() {
 
     let [dropState, setDropState] = useState({
+        settingState: false,
         gradeState: false,
         locationState: false,
         companyState : false,
@@ -84,8 +85,29 @@ export default function Extracurriculars() {
                 {/* Filter Content Area*/}
                 <div className="grid grid-cols-4 h-max gap-4">
 
-                    {/* Normal Filters (Miscellaneous Things)*/}
+                    {/* Column Span 1 items */}
                     <div className="col-span-1">
+
+                        <div className="shadow-[0_0_10px_-7px] rounded-lg flex flex-col justify-center items-center py-4 mb-4">
+                            <div className="filter bg-gradient-to-r from-yellow-300 to-yellow-500">
+                                    <div className="filter-title" onClick={() => handleGrade("settingState")}>
+                                        Settings
+                                        <AdjustmentsHorizontalIcon className="dropdown-main"/>
+                                    </div>
+
+                                    {dropState.settingState && 
+                                        <>
+                                            <div className="w-full p-3 my-2 flex flex-col justify-center items-center gap-4">
+                                                <button className="w-9/12 bg-blue-500 p-3 rounded-md shadow-md font-outfit text-white flex justify-between">Close All Filters <XCircleIcon className="dropdown-main"/></button>
+                                                <button className="w-9/12 bg-blue-500 p-3 rounded-md shadow-md font-outfit text-white flex justify-between">Open All Filters <PlusCircleIcon className="dropdown-main"/></button>
+                                            </div>
+                                        </>                                    
+                                    }
+
+
+                                </div>
+                        </div>
+
                         <div className="shadow-[0_0_10px_-7px] rounded-lg flex flex-col justify-center items-center py-4">
 
                             {/* Grade Filters */}
