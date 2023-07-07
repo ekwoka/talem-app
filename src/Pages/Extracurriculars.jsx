@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../Components/Header";
 import {useState} from "react"
 import { PlusCircleIcon, MinusCircleIcon } from '@heroicons/react/24/outline'
+import '../index.css';
 
 export default function Extracurriculars() {
 
@@ -9,12 +10,45 @@ export default function Extracurriculars() {
         gradeState: false,
         locationState: false,
         companyState : false,
+        durationState: false,
+        teamIndividualState: false,
+        skillLevelState: false,
         programmingState: false,
         engineeringState: false,
         mathScienceState: false,
         businessSocialState: false,
         humanityArtState: false
     })
+
+    let gradeItems = [
+        {id: "grade9", text: "Freshman"},
+        {id: "grade10", text: "Sophomore"},
+        {id: "grade11", text: "Junior"},
+        {id: "grade12", text: "Senior"}
+    ]
+
+    let companyItems = [
+        {id: "nonprofit", text: "Nonprofit Organization"},
+        {id: "businesscompany", text: "Business Enterprise"},
+        {id: "governmentagency", text: "Government Agency"}
+    ]
+
+    let durationItems = [
+        {id: "shortterm", text: "Short-Term Committments"},
+        {id: "longterm", text: "Long-Term Committments"}
+    ]
+
+    let teamIndividualItems = [
+        {id: "individualbased", text: "Individual/Solo Activites"},
+        {id: "teambased", text: "Team Based Activites"}
+        
+    ]
+
+    let skillLevelItems = [
+        {id: "beginnerfriendly", text: "Beginner-Friendly"},
+        {id: "intermediatelevel", text: "Intermediate"},
+        {id: "advancedlevel", text: "Advanced"},
+    ]
 
     function handleGrade(name) {
         setDropState((prevArray) => {
@@ -55,57 +89,40 @@ export default function Extracurriculars() {
                         <div className="shadow-lg rounded-lg flex flex-col justify-center items-center py-4">
 
                             {/* Grade Filters */}
-                            <div className="w-11/12 bg-slate-300 rounded-md h-max p-3 flex flex-col my-2">
-                                <div className="text-lg p-1 flex justify-between items-center font-outfit" onClick={() => handleGrade("gradeState")}>
+                            <div className="filter">
+                                <div className="filter-title" onClick={() => handleGrade("gradeState")}>
                                     Sort by Grade:
-                                    {dropState.gradeState ? <MinusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/> : <PlusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/>}
+                                    {dropState.gradeState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
                                 </div>
 
                                 {dropState.gradeState && 
                                     <>
-                                    <div className="w-full mt-5">
-                                        <div class="flex items-center mb-4">
-                                            <input id="grade9" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="grade9" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Freshman</label>
-                                        </div>
-                                    </div>                            
-
-                                    <div className="w-full">
-                                        <div class="flex items-center mb-4">
-                                            <input id="grade10" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="grade10" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Sophomore</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div class="flex items-center mb-4">
-                                            <input id="grade11" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="grade11" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Junior</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div class="flex items-center mb-4">
-                                            <input id="grade12" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="grade12" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Senior</label>
-                                        </div>
-                                    </div>
-                                    </>
+                                        {gradeItems.map((item) => {
+                                            return (
+                                                <div className="w-full">
+                                                    <div class="flex items-center mb-4">
+                                                        <input id={item.id} type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                    </>                                    
                                 }
 
 
                             </div>
                         
                             {/* Location Filters */}
-                            <div className="w-11/12 bg-slate-300 rounded-md h-max p-3 flex flex-col">
-                                <div className="text-lg p-1 flex justify-between items-center font-outfit" onClick={() => handleGrade("locationState")}>
+                            <div className="filter">
+                                <div className="filter-title" onClick={() => handleGrade("locationState")}>
                                     Work Environment <br /> (In Person/Remote)
-                                    {dropState.locationState ? <MinusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/> : <PlusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/>}
+                                    {dropState.locationState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
                                 </div>
 
                                 {dropState.locationState && 
                                     <>
-                                    <div className="w-full mt-5">
+                                    <div className="w-full">
                                         <div class="flex items-center mb-4">
                                             <input id="inperson" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                             <label htmlFor="inperson" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">In-Person</label>
@@ -125,34 +142,99 @@ export default function Extracurriculars() {
                             </div>
 
                             {/* Company Type Filters */}
-                            <div className="w-11/12 bg-slate-300 rounded-md h-max p-3 flex flex-col mt-2">
-                                <div className="text-lg p-1 flex justify-between items-center font-outfit" onClick={() => handleGrade("companyState")}>
+                            <div className="filter">
+                                <div className="filter-title" onClick={() => handleGrade("companyState")}>
                                     Company Type
-                                    {dropState.companyState ? <MinusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/> : <PlusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/>}
+                                    {dropState.companyState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
                                 </div>
 
                                 {dropState.companyState && 
                                     <>
-                                    <div className="w-full mt-5">
-                                        <div class="flex items-center mb-4">
-                                            <input id="nonprofit" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="nonprofit" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Nonprofit Organization</label>
-                                        </div>
-                                    </div>                            
+                                        {companyItems.map((item) => {
+                                            return (
+                                                <div className="w-full">
+                                                    <div class="flex items-center mb-4">
+                                                        <input id={item.id} type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                    </>
+                                }
 
-                                    <div className="w-full">
-                                        <div class="flex items-center mb-4">
-                                            <input id="businesscompany" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="businesscompany" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Business Enterprises</label>
-                                        </div>
-                                    </div>
 
-                                    <div className="w-full">
-                                        <div class="flex items-center mb-4">
-                                            <input id="governmentagency" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="governmentagency" class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Government Agencies</label>
-                                        </div>
-                                    </div>
+                            </div>
+
+                            {/* Duration Filters */}
+                            <div className="filter">
+                                <div className="filter-title" onClick={() => handleGrade("durationState")}>
+                                    Activity Committment (Duration)
+                                    {dropState.durationState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
+                                </div>
+
+                                {dropState.durationState && 
+                                    <>
+                                        {durationItems.map((item) => {
+                                            return (
+                                                <div className="w-full">
+                                                    <div class="flex items-center mb-4">
+                                                        <input id={item.id} type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                    </>
+                                }
+
+
+                            </div>
+
+                            {/* Solo/Team Filters */}
+                            <div className="filter">
+                                <div className="filter-title" onClick={() => handleGrade("teamIndividualState")}>
+                                    Solo vs. Team-Based Activites
+                                    {dropState.teamIndividualState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
+                                </div>
+
+                                {dropState.teamIndividualState && 
+                                    <>
+                                        {teamIndividualItems.map((item) => { 
+                                            return (
+                                                <div className="w-full">
+                                                    <div class="flex items-center mb-4">
+                                                        <input id={item.id} type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                    </>
+                                }
+
+
+                            </div>
+
+                            {/* Toughness Level Filters */}
+                            <div className="filter">
+                                <div className="filter-title" onClick={() => handleGrade("skillLevelState")}>
+                                    Skill Level
+                                    {dropState.skillLevelState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
+                                </div>
+
+                                {dropState.skillLevelState && 
+                                    <>
+                                        {skillLevelItems.map((item) => { 
+                                            return (
+                                                <div className="w-full">
+                                                    <div class="flex items-center mb-4">
+                                                        <input id={item.id} type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} class="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
                                     </>
                                 }
 
@@ -165,10 +247,10 @@ export default function Extracurriculars() {
                         <div className="shadow-lg rounded-lg flex flex-col justify-center items-center py-4 mt-4">
 
                             {/* Programming/Tech Filters*/}
-                            <div className="w-11/12 bg-red-300 rounded-md h-max p-3 flex flex-col my-2">
-                                <div className="text-lg p-1 flex justify-between items-center font-outfit" onClick={() => handleGrade("programmingState")}>
+                            <div className="filter bg-red-300">
+                                <div className="filter-title" onClick={() => handleGrade("programmingState")}>
                                     Programming/Tech 
-                                    {dropState.programmingState ? <MinusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/> : <PlusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/>}
+                                    {dropState.programmingState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
                                 </div>
 
                                 {dropState.programmingState && 
@@ -200,10 +282,10 @@ export default function Extracurriculars() {
                             </div>
 
                             {/* Engineering Filters*/}
-                            <div className="w-11/12 bg-red-300 rounded-md h-max p-3 flex flex-col my-2">
-                                <div className="text-lg p-1 flex justify-between items-center font-outfit" onClick={() => handleGrade("engineeringState")}>
+                            <div className="filter bg-red-300">
+                                <div className="filter-title" onClick={() => handleGrade("engineeringState")}>
                                     Engineering/Design
-                                    {dropState.engineeringState ? <MinusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/> : <PlusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/>}
+                                    {dropState.engineeringState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
                                 </div>
 
                                 {dropState.engineeringState && 
@@ -235,10 +317,10 @@ export default function Extracurriculars() {
                             </div>
 
                             {/* Math/Science Filters*/}
-                            <div className="w-11/12 bg-red-300 rounded-md h-max p-3 flex flex-col my-2">
-                                <div className="text-lg p-1 flex justify-between items-center font-outfit" onClick={() => handleGrade("mathScienceState")}>
+                            <div className="filter bg-red-300">
+                                <div className="filter-title" onClick={() => handleGrade("mathScienceState")}>
                                     Mathematics/Science
-                                    {dropState.mathScienceState ? <MinusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/> : <PlusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/>}
+                                    {dropState.mathScienceState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
                                 </div>
 
                                 {dropState.mathScienceState && 
@@ -290,10 +372,10 @@ export default function Extracurriculars() {
                             </div>
 
                              {/* Business/Social */}
-                             <div className="w-11/12 bg-red-300 rounded-md h-max p-3 flex flex-col my-2">
-                                <div className="text-lg p-1 flex justify-between items-center font-outfit" onClick={() => handleGrade("businessSocialState")}>
+                             <div className="filter bg-red-300">
+                                <div className="filter-title" onClick={() => handleGrade("businessSocialState")}>
                                     Business/Social Studies
-                                    {dropState.businessSocialState ? <MinusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/> : <PlusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/>}
+                                    {dropState.businessSocialState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
                                 </div>
 
                                 {dropState.businessSocialState && 
@@ -359,10 +441,10 @@ export default function Extracurriculars() {
                             </div>
 
                             {/* Humanities/Art */}
-                            <div className="w-11/12 bg-red-300 rounded-md h-max p-3 flex flex-col my-2">
-                                <div className="text-lg p-1 flex justify-between items-center font-outfit" onClick={() => handleGrade("humanityArtState")}>
+                            <div className="filter bg-red-300">
+                                <div className="filter-title" onClick={() => handleGrade("humanityArtState")}>
                                     Humanities (+ Art)
-                                    {dropState.humanityArtState ? <MinusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/> : <PlusCircleIcon className="h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer"/>}
+                                    {dropState.humanityArtState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
                                 </div>
 
                                 {dropState.humanityArtState && 

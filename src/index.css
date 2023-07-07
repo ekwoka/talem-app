@@ -17,3 +17,17 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .dropdown-main {
+    @apply h-7 w-7 inline mr-2 text-slate-500 hover:text-black cursor-pointer;
+  }
+
+  .filter {
+    @apply w-11/12 bg-slate-300 rounded-md h-max p-3 flex flex-col mt-2 mb-2;
+  }
+
+  .filter-title {
+    @apply text-lg p-1 flex justify-between items-center font-outfit;
+  }
+}
