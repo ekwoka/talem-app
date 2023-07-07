@@ -599,7 +599,20 @@ export default function Extracurriculars(props) {
                                 
                             </div>
 
+                            <div className="w-full p-4 bg-red-500 px-8 h-max flex flex-col gap-2"> {/* Main EC holder */}
+                                {props.ecArray.map((ec) => {
+                                    return (
+                                        <div className="bg-blue-500 grid grid-cols-4"> {/* Individual EC Item holder*/}
+                                            <div className="bg-red-300 col-span-3 p-3 flex flex-col gap-2"> {/* Col-span-3 EC info */}
+                                                <h1 className="text-4xl font-outfit text-center">{ec.name}</h1>
+                                                <p className="text-center">{ec.description}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
                     </div>
+                    
 
                 </div>
 
