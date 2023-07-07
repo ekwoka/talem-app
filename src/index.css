@@ -30,4 +30,8 @@ code {
   .filter-title {
     @apply text-xs sm:text-lg p-1 flex justify-between items-center font-outfit;
   }
+
+  .ec-tag {
+    @apply p-2 bg-blue-300 font-outfit text-base rounded-lg;
+  }
 }
