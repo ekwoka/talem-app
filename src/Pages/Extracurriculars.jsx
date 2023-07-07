@@ -4,7 +4,8 @@ import {useState} from "react"
 import { PlusCircleIcon, MinusCircleIcon, AdjustmentsHorizontalIcon, XCircleIcon } from '@heroicons/react/24/outline'
 import '../index.css';
 
-export default function Extracurriculars() {
+export default function Extracurriculars(props) {
+    console.log(props.ecArray)
 
     let [dropState, setDropState] = useState({
         settingState: false,
