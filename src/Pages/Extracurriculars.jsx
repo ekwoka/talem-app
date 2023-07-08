@@ -612,7 +612,7 @@ export default function Extracurriculars(props) {
 
                             <div className="mx-8 bg-yellow-300 py-2 font-outfit px-4 rounded-lg text-yellow-800 text-center shadow-md">
                                 Hi there! Do you find this website helpful? Well, it was made by a very sleep-deprived highschooler. It 
-                                would mean a lot if you could <span className="text-blue-700 underline"><a href="https://pranavk.vercel.app">view his portfolio</a>, <a href="https://ko-fi.com/pranavk">donate him a coffee</a>, <a href="https://discord.com">or join Talem's discord server!</a></span>
+                                would mean a lot if you could <span className=""><a href="https://pranavk.vercel.app" className="text-blue-700 underline">view his portfolio</a>, <a href="https://ko-fi.com/pranavk" className="text-blue-700 underline">donate him a coffee</a>, <a href="https://discord.com" className="text-blue-700 underline">or join Talem's discord server!</a></span>
                             </div>
 
                             {/* Actual EC Components */}
