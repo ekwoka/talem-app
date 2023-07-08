@@ -32,6 +32,7 @@ export default function Extracurriculars(props) {
       
 
     let gradeItems = [
+        {id: "allgrades", text: "All Grades"},
         {id: "grade9", text: "Freshman"},
         {id: "grade10", text: "Sophomore"},
         {id: "grade11", text: "Junior"},
@@ -169,14 +170,21 @@ export default function Extracurriculars(props) {
                                     <div className="w-full">
                                         <div className="flex items-center mb-4">
                                             <input id="inperson" type="checkbox" onChange={() => props.filterChange("inperson")} checked={props.checkVal["inperson"]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="inperson" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">In-Person Only</label>
+                                            <label htmlFor="inperson" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">In-Person</label>
                                         </div>
                                     </div>                            
 
                                     <div className="w-full">
                                         <div className="flex items-center mb-4">
                                             <input id="remote" type="checkbox" onChange={() => props.filterChange("remote")} checked={props.checkVal["remote"]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="remote" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Remote Only</label>
+                                            <label htmlFor="remote" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Remote</label>
+                                        </div>
+                                    </div>
+
+                                    <div className="w-full">
+                                        <div className="flex items-center mb-4">
+                                            <input id="hybrid" type="checkbox" onChange={() => props.filterChange("hybrid")} checked={props.checkVal["hybrid"]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                            <label htmlFor="hybrid" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Hybrid</label>
                                         </div>
                                     </div>
                                     </>
@@ -198,7 +206,7 @@ export default function Extracurriculars(props) {
                                             return (
                                                 <div className="w-full">
                                                     <div className="flex items-center mb-4">
-                                                        <input id={item.id} type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <input id={item.id} type="checkbox" value="" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                                         <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
                                                     </div>
                                                 </div>
@@ -627,6 +635,8 @@ export default function Extracurriculars(props) {
                                                     <div className="ec-tag">{ec.location}</div>
                                                     <div className="ec-tag">{ec.skill}</div>
                                                     <div className="ec-tag">{ec.soloTeam}</div>
+                                                    <div className="ec-tag">{ec.type}</div>
+                                                    
                                                     {ec.subjects.map((subject) => {
                                                         return (
                                                             <div className="ec-tag">{subject}</div>

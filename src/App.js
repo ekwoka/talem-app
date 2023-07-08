@@ -24,12 +24,18 @@ function App() {
   const [burnerArray, setBurnerArray] = useState([])
 
   const [filterValues, setFilterValues] = useState({
+    allgrades: false,
     grade9: false,
     grade10: false,
     grade11: false,
     grade12: false,
     inperson: false,
-    remote: false
+    remote: false,
+    hybrid: false,
+    nonprofit: false,
+    businesscompany: false,
+    governmentagency: false,
+    educationalinstitution: false
   });
 
   const handleFilterChange = (name) => {
@@ -45,16 +51,16 @@ function App() {
       const filteredData = extracurricularsArray.filter((ec) => {
         let ecTags = [ec.commitment, ec.environment, ec.grade, ec.location, ec.skill, ec.soloTeam, ec.type]
 
-        if (updatedValues.grade9 && ecTags.includes("All Grades")) {
-          return true
-        }
+        // if (updatedValues.grade9 && ecTags.includes("All Grades") ||
+        //     updatedValues.grade10 && ecTags.includes("All Grades") ||
+        //     updatedValues.grade11 && ecTags.includes("All Grades") ||
+        //     updatedValues.grade12 && ecTags.includes("All Grades")        
+        // ) {
+        //   return true
+        // }
 
-        if (updatedValues.grade9 && ecTags.includes("All Grades") ||
-            updatedValues.grade10 && ecTags.includes("All Grades") ||
-            updatedValues.grade11 && ecTags.includes("All Grades") ||
-            updatedValues.grade12 && ecTags.includes("All Grades")        
-        ) {
-          return true
+        if (updatedValues.allgrades && !ecTags.includes("All Grades")) {
+          return false
         }
         
         if (updatedValues.grade9 && !ecTags.includes("9th Grade")) {
@@ -78,6 +84,26 @@ function App() {
         }
 
         if (updatedValues.remote && !ecTags.includes("Remote/Virtual")) {
+          return false
+        }
+
+        if (updatedValues.hybrid && !ecTags.includes("Hybrid")) {
+          return false
+        }
+
+        if (updatedValues.nonprofit && !ecTags.includes("Nonprofit Organization")) {
+          return false
+        }
+
+        if (updatedValues.businesscompany && !ecTags.includes("Business")) {
+          return false
+        }
+        
+        if (updatedValues.governmentagency && !ecTags.includes("Government Agency")) {
+          return false
+        }
+
+        if (updatedValues.educationalinstitution && !ecTags.includes("Educational Institution")) {
           return false
         }
 
