@@ -35,7 +35,21 @@ function App() {
     nonprofit: false,
     businesscompany: false,
     governmentagency: false,
-    educationalinstitution: false
+    educationalinstitution: false,
+    shortterm: false,
+    longterm: false,
+    teamandindividual: false,
+    individualbased: false,
+    teambased: false,
+    allskillevels: false,
+    beginnerfriendly: false,
+    intermediatelevel: false,
+    advancedlevel: false,
+    global: false,
+    eastcoast: false,
+    westcoast: false,
+    midwest: false,
+    allusa: false
   });
 
   const handleFilterChange = (name) => {
@@ -104,6 +118,62 @@ function App() {
         }
 
         if (updatedValues.educationalinstitution && !ecTags.includes("Educational Institution")) {
+          return false
+        }
+
+        if (updatedValues.shortterm && !ecTags.includes("Short-Term")) {
+          return false
+        }
+
+        if (updatedValues.longterm && !ecTags.includes("Long-Term")) {
+          return false
+        }
+
+        if (updatedValues.teamandindividual && !ecTags.includes("Both Individual + Team")) {
+          return false
+        }
+
+        if (updatedValues.individualbased && !ecTags.includes("Individual-Based")) {
+          return false
+        }
+
+        if (updatedValues.teambased && !ecTags.includes("Team-Based")) {
+          return false
+        }
+
+        if (updatedValues.allskillevels && !ecTags.includes("All Skill Levels")) {
+          return false
+        }
+
+        if (updatedValues.beginnerfriendly && !ecTags.includes("Beginner Friendly")) {
+          return false
+        }
+
+        if (updatedValues.intermediatelevel && !ecTags.includes("Intermediate")) {
+          return false
+        }
+
+        if (updatedValues.advancedlevel && !ecTags.includes("Advanced")) {
+          return false
+        }
+
+        if (updatedValues.global && !ecTags.includes("Global/Worldwide")) {
+          return false
+        }
+
+        if (updatedValues.eastcoast && !ecTags.includes("East Coast (USA)")) {
+          return false
+        }
+
+        if (updatedValues.westcoast && !ecTags.includes("West Coast (USA)")) {
+          return false
+        }
+
+        if (updatedValues.midwest && !ecTags.includes("Mid West(USA)")) {
+          return false
+        }
+
+        if (updatedValues.allusa && !ecTags.includes("USA Only")) {
           return false
         }
 

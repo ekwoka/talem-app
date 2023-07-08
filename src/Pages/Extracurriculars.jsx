@@ -52,12 +52,14 @@ export default function Extracurriculars(props) {
     ]
 
     let teamIndividualItems = [
+        {id: "teamandindividual", text:"Both Individual + Team"},
         {id: "individualbased", text: "Individual/Solo Activites"},
         {id: "teambased", text: "Team Based Activites"}
         
     ]
 
     let skillLevelItems = [
+        {id: "allskillevels", text: "All Skill Levels"},
         {id: "beginnerfriendly", text: "Beginner-Friendly"},
         {id: "intermediatelevel", text: "Intermediate"},
         {id: "advancedlevel", text: "Advanced"},
@@ -68,7 +70,7 @@ export default function Extracurriculars(props) {
         {id: "eastcoast", text: "East Coast (USA)"},
         {id: "westcoast", text: "West Coast (USA)"},
         {id: "midwest", text: "MidWest (USA)"},
-        {id: "allusa", text: "All of US"}
+        {id: "allusa", text: "Only USA"}
         
     ]
 
@@ -231,7 +233,7 @@ export default function Extracurriculars(props) {
                                             return (
                                                 <div className="w-full">
                                                     <div className="flex items-center mb-4">
-                                                        <input id={item.id} type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <input id={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                                         <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
                                                     </div>
                                                 </div>
@@ -256,7 +258,7 @@ export default function Extracurriculars(props) {
                                             return (
                                                 <div className="w-full">
                                                     <div className="flex items-center mb-4">
-                                                        <input id={item.id} type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <input id={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                                         <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
                                                     </div>
                                                 </div>
@@ -268,7 +270,7 @@ export default function Extracurriculars(props) {
 
                             </div>
 
-                            {/* Toughness Level Filters */}
+                            {/* Skill Level Filters */}
                             <div className="filter">
                                 <div className="filter-title" onClick={() => handleGrade("skillLevelState")}>
                                     Skill Level
@@ -281,7 +283,7 @@ export default function Extracurriculars(props) {
                                             return (
                                                 <div className="w-full">
                                                     <div className="flex items-center mb-4">
-                                                        <input id={item.id} type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <input id={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                                         <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
                                                     </div>
                                                 </div>
@@ -306,7 +308,7 @@ export default function Extracurriculars(props) {
                                             return (
                                                 <div className="w-full">
                                                     <div className="flex items-center mb-4">
-                                                        <input id={item.id} type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <input id={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                                         <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
                                                     </div>
                                                 </div>
