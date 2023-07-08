@@ -260,6 +260,15 @@ function App() {
 
   };
   
+  function resetFilterValues() {
+    const updatedFilterValues = Object.keys(filterValues).reduce((obj, key) => {
+      obj[key] = false;
+      return obj;
+    }, {});
+
+    setFilterValues(updatedFilterValues);
+    handleFilterChange(null) // Just activating the check filter function so it can properly register the fact that everything is cleared
+  };
   
 
   useEffect(() => {
@@ -285,7 +294,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Homepage />} />
-          <Route path="/extracurriculars" element={<Extracurriculars ecArray={burnerArray} filterChange={handleFilterChange} checkVal={filterValues} searchChange={handleSearchChange}/>} />
+          <Route path="/extracurriculars" element={<Extracurriculars ecArray={burnerArray} resetValues={resetFilterValues} filterChange={handleFilterChange} checkVal={filterValues} searchChange={handleSearchChange}/>}/>
         </Routes>
       </BrowserRouter>
       <Analytics />
