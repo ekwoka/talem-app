@@ -657,8 +657,8 @@ export default function Extracurriculars(props) {
                                                     })}
                                                 </div>
                                             </div>
-                                            <div className="col-span-1 p-10 flex flex-col gap-4 justify-evenly items-center">
-                                                <img src={ec.src} alt={`Picture of ${ec.name} logo`} className="w-full shadow-md rounded-xl"/>
+                                            <div className="col-span-1 p-7 flex flex-col gap-4 justify-evenly items-center">
+                                                <img src={ec.src} alt={`Picture of ${ec.name} logo`} className="w-full shadow-md rounded-xl p-3"/>
                                                 <a href={ec.link} target="_blank" className="ec-buttons">Visit Site <ArrowTopRightOnSquareIcon className="dropdown-main"/> </a>
                                                 <button className="ec-buttons">Bookmark <BookmarkIcon className="dropdown-main hover:text-yellow-500"/> </button>
                                             </div>
