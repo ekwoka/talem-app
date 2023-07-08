@@ -76,6 +76,20 @@ export default function Extracurriculars(props) {
         
     ]
 
+    let programmingItems = [
+        {id: "allprogramming", text: "All Programming"},
+        {id: "cybersecurity", text: "Cybersecurity"},
+        {id: "softwaredev", text: "Software Development"},
+        {id: "machinelearning", text: "Machine Learning/AI"}
+    ]
+
+    let engineeringItems = [
+        {id: "allengineering", text: "All Engineering"},
+        {id: "mechengineering", text: "Mechanical Engineering"},
+        {id: "electricalengineering", text: "Electrical Engineering"},
+        {id: "aeroengineering", text: "Aerospace Engineering"}
+    ]
+
     function handleGrade(name) {
         setDropState((prevArray) => {
             return {
@@ -336,26 +350,16 @@ export default function Extracurriculars(props) {
 
                                 {dropState.programmingState && 
                                     <>
-                                    <div className="w-full mt-5">
-                                        <div className="flex items-center mb-4">
-                                            <input id="cybersecurity" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="cybersecurity" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">CyberSecurity</label>
-                                        </div>
-                                    </div>                            
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="softwaredev" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="softwaredev" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Software Development</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="machinelearning" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="machinelearning" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Machine Learning/AI</label>
-                                        </div>
-                                    </div>
+                                        {programmingItems.map((item) => {
+                                            return (
+                                                <div className="w-full">
+                                                    <div className="flex items-center mb-4">
+                                                        <input id={item.id} name={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
                                     </>
                                 }
 
@@ -371,27 +375,17 @@ export default function Extracurriculars(props) {
 
                                 {dropState.engineeringState && 
                                     <>
-                                    <div className="w-full mt-5">
-                                        <div className="flex items-center mb-4">
-                                            <input id="mechengineering" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="mechengineering" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Mechanical Engineering</label>
-                                        </div>
-                                    </div>                            
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="electricalengineering" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="softwaredev" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Electrical Engineering</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="aeroengineering" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="aeroengineering" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Aerospace Engineering</label>
-                                        </div>
-                                    </div>
-                                    </>
+                                    {engineeringItems.map((item) => {
+                                        return (
+                                            <div className="w-full">
+                                                <div className="flex items-center mb-4">
+                                                    <input id={item.id} name={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                    <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
+                                </>
                                 }
 
 

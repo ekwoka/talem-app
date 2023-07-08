@@ -66,7 +66,15 @@ function App() {
     eastcoast: false,
     westcoast: false,
     midwest: false,
-    allusa: false
+    allusa: false,
+    allprogramming: false,
+    cybersecurity: false,
+    softwaredev: false,
+    machinelearning: false,
+    allengineering: false, // Start Here
+    mechengineering: false,
+    electricalengineering: false,
+    aeroengineering: false
   });
 
   const handleFilterChange = (name) => {
@@ -76,11 +84,15 @@ function App() {
         ...prevArray,
         [name]: !prevArray[name]
       }
-      console.log("updated vals:")
-      console.log(updatedValues)
 
       const filteredData = extracurricularsArray.filter((ec) => {
         let ecTags = [ec.commitment, ec.environment, ec.grade, ec.location, ec.skill, ec.soloTeam, ec.type]
+        let subjects = ec.subjects
+
+        for (let i = 0; i < subjects.length; i++) {
+          ecTags.push(subjects[i]);
+        }
+
 
         // if (updatedValues.grade9 && ecTags.includes("All Grades") ||
         //     updatedValues.grade10 && ecTags.includes("All Grades") ||
@@ -90,6 +102,7 @@ function App() {
         //   return true
         // }
 
+        // Grade Filters
         if (updatedValues.allgrades && !ecTags.includes("All Grades")) {
           return false
         }
@@ -110,6 +123,7 @@ function App() {
           return false
         }
 
+        // Environment Filters
         if (updatedValues.inperson && !ecTags.includes("In Person")) {
           return false
         }
@@ -118,10 +132,12 @@ function App() {
           return false
         }
 
+
         if (updatedValues.hybrid && !ecTags.includes("Hybrid")) {
           return false
         }
 
+        // Acitivity Type filters
         if (updatedValues.nonprofit && !ecTags.includes("Nonprofit Organization")) {
           return false
         }
@@ -138,6 +154,7 @@ function App() {
           return false
         }
 
+        // Work Commitment filter
         if (updatedValues.shortterm && !ecTags.includes("Short-Term")) {
           return false
         }
@@ -146,6 +163,7 @@ function App() {
           return false
         }
 
+        // Cooperation style filters
         if (updatedValues.teamandindividual && !ecTags.includes("Both Individual + Team")) {
           return false
         }
@@ -158,6 +176,7 @@ function App() {
           return false
         }
 
+        // Skill filters
         if (updatedValues.allskillevels && !ecTags.includes("All Skill Levels")) {
           return false
         }
@@ -174,6 +193,7 @@ function App() {
           return false
         }
 
+        // Location filters
         if (updatedValues.global && !ecTags.includes("Global/Worldwide")) {
           return false
         }
@@ -191,6 +211,40 @@ function App() {
         }
 
         if (updatedValues.allusa && !ecTags.includes("USA Only")) {
+          return false
+        }
+
+        // Programming filters
+        if (updatedValues.allprogramming && !ecTags.includes("All Programming")) {
+          return false
+        }
+
+        if (updatedValues.cybersecurity && !ecTags.includes("Cybersecurity")) {
+          return false
+        }
+
+        if (updatedValues.softwaredev && !ecTags.includes("Software Development")) {
+          return false
+        }
+
+        if (updatedValues.machinelearning && !ecTags.includes("Machine Learning/AI")) {
+          return false
+        }
+
+        // Engineering/Design filters
+        if (updatedValues.allengineering && !ecTags.includes("All Engineering")) {
+          return false
+        }
+
+        if (updatedValues.mechengineering && !ecTags.includes("Mechanical Engineering")) {
+          return false
+        }
+
+        if (updatedValues.electricalengineering && !ecTags.includes("Electrical Engineering")) {
+          return false
+        }
+
+        if (updatedValues.aeroengineering && !ecTags.includes("Aerospace Engineering")) {
           return false
         }
 
