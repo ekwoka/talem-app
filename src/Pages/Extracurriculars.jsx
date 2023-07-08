@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Components/Header";
 import {useState} from "react"
-import { PlusCircleIcon, MinusCircleIcon, AdjustmentsHorizontalIcon, XCircleIcon, ArrowTopRightOnSquareIcon, BookmarkIcon } from '@heroicons/react/24/outline'
+import { PlusCircleIcon, MinusCircleIcon, AdjustmentsHorizontalIcon, XCircleIcon, ArrowTopRightOnSquareIcon, BookmarkIcon, TrashIcon } from '@heroicons/react/24/outline'
 import '../index.css';
 
 export default function Extracurriculars(props) {
@@ -141,6 +141,7 @@ export default function Extracurriculars(props) {
                                             <div className="w-full p-3 my-2 flex flex-col justify-center items-center gap-4">
                                                 <button className="w-9/12 bg-blue-500 p-3 rounded-md shadow-md font-outfit text-white flex justify-between" onClick={() => changeAllDropdownState(false)}>Close All Filters <XCircleIcon className="dropdown-main"/></button>
                                                 <button className="w-9/12 bg-blue-500 p-3 rounded-md shadow-md font-outfit text-white flex justify-between" onClick={() => changeAllDropdownState(true)}>Open All Filters <PlusCircleIcon className="dropdown-main"/></button>
+                                                <button className="w-9/12 bg-blue-500 p-3 rounded-md shadow-md font-outfit text-white flex justify-between" onClick={props.resetValues} >Clear All Filters <TrashIcon className="dropdown-main"/></button>
                                             </div>
                                         </>                                    
                                     }
@@ -606,11 +607,7 @@ export default function Extracurriculars(props) {
                                     Hi there! Do you find this website helpful? Well, it was made by a very sleep-deprived highschooler. It 
                                     would mean a lot if you could <span className=""><a href="https://pranavk.vercel.app" target="_blank" className="text-blue-700 underline">view his portfolio</a>, <a href="https://ko-fi.com/pranavk" target="_blank" className="text-blue-700 underline">donate him a coffee</a>, <a href="https://discord.com" className="text-blue-700 underline" target="_blank">or join Talem's discord server!</a></span>
                                 </div>
-                            }    
-
-                            <div className="w-full flex gap-2 p-3 justify-center">
-                                <button onClick={props.resetValues} className="bg-blue-300 p-2 font-outfit rounded-lg hover:bg-blue-400">Clear All Filters</button>
-                            </div>    
+                            }       
 
 
                             {/* Actual EC Components */}
