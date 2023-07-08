@@ -41,7 +41,8 @@ export default function Extracurriculars(props) {
     let companyItems = [
         {id: "nonprofit", text: "Nonprofit Organization"},
         {id: "businesscompany", text: "Business Enterprise"},
-        {id: "governmentagency", text: "Government Agency"}
+        {id: "governmentagency", text: "Government Agency"},
+        {id: "educationalinstitution", text: "Educational Institution"}
     ]
 
     let durationItems = [
@@ -105,6 +106,7 @@ export default function Extracurriculars(props) {
                 <div className="grid grid-cols-4 h-max gap-4">
 
                     {/* Column Span 1 items */}
+
                     {/* Button Settings Filters */}
                     <div className="col-span-1">
 
@@ -143,7 +145,7 @@ export default function Extracurriculars(props) {
                                             return (
                                                 <div className="w-full">
                                                     <div className="flex items-center mb-4">
-                                                        <input id={item.id} name={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <input id={item.id} name={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                                         <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
                                                     </div>
                                                 </div>
@@ -166,7 +168,7 @@ export default function Extracurriculars(props) {
                                     <>
                                     <div className="w-full">
                                         <div className="flex items-center mb-4">
-                                            <input id="inperson" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                            <input id="inperson" type="checkbox" onChange={() => props.filterChange("inperson")} checked={props.checkVal["inperson"]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                             <label htmlFor="inperson" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">In-Person</label>
                                         </div>
                                     </div>                            
@@ -614,7 +616,7 @@ export default function Extracurriculars(props) {
                                     
                                     ) : (
                                     props.ecArray.map((ec) => (
-                                        <div className="shadow-lg rounded-lg bg-white grid grid-cols-4" key={ec.id}> {/* Individual EC Item holder*/}
+                                        <div className="shadow-lg rounded-lg bg-white grid grid-cols-4 my-2" key={ec.id}> {/* Individual EC Item holder*/}
                                             <div className="col-span-3 p-10 flex flex-col justify-evenly"> {/* Col-span-3 EC info */}
                                                 <h1 className="text-5xl font-outfit">{ec.name}</h1>
                                                 <p className="">{ec.description}</p>

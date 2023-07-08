@@ -21,21 +21,74 @@ initializeApp(firebaseConfig);
 function App() {
   
   const [extracurricularsArray, setExtracurricularsArray] = useState([]);
+  const [burnerArray, setBurnerArray] = useState([])
+
   const [filterValues, setFilterValues] = useState({
     grade9: false,
     grade10: false,
     grade11: false,
     grade12: false,
+    inperson: false
   });
 
   const handleFilterChange = (name) => {
 
-    setFilterValues((prevFilterValues) => ({
-      ...prevFilterValues,
-      [name]: !prevFilterValues[name]
-    }));
+    setFilterValues((prevArray) => {
+      const updatedValues = {
+        ...prevArray,
+        [name]: !prevArray[name]
+      }
+      console.log("updated vals:")
+      console.log(updatedValues)
+
+      const filteredData = extracurricularsArray.filter((ec) => {
+        let ecTags = [ec.commitment, ec.environment, ec.grade, ec.location, ec.skill, ec.soloTeam, ec.type]
+
+        if (updatedValues.grade9 && ecTags.includes("All Grades")) {
+          return true
+        }
+
+        if (updatedValues.grade9 && ecTags.includes("All Grades") ||
+            updatedValues.grade10 && ecTags.includes("All Grades") ||
+            updatedValues.grade11 && ecTags.includes("All Grades") ||
+            updatedValues.grade12 && ecTags.includes("All Grades")        
+        ) {
+          return true
+        }
+        
+        if (updatedValues.grade9 && !ecTags.includes("9th Grade")) {
+          return false
+        }
+
+        if (updatedValues.grade10 && !ecTags.includes("10th Grade")) {
+          return false
+        }
+
+        if (updatedValues.grade11 && !ecTags.includes("11th Grade")) {
+          return false
+        }
+
+        if (updatedValues.grade12 && !ecTags.includes("12th Grade")) {
+          return false
+        }
+
+        if (updatedValues.inperson && !ecTags.includes("In Person")) {
+          return false
+        }
+
+        return true
+  
+      })  
+      setBurnerArray(filteredData)
+
+      console.log(updatedValues)
+      return updatedValues
+
+    })
 
   };
+  
+  
 
   useEffect(() => {
     const fetchExtracurriculars = async () => {
@@ -45,6 +98,7 @@ function App() {
         const snapshot = await getDocs(extracurricularsRef);
         const data = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
         setExtracurricularsArray(data);
+        setBurnerArray(data)
         console.log(data);
       } catch (error) {
         console.log(error.message);
@@ -54,41 +108,11 @@ function App() {
     fetchExtracurriculars();
   }, []);
 
-  // Apply filtering logic here
-  const filteredECs = extracurricularsArray.filter((ec) => {
-    if (filterValues.grade9 || filterValues.grade10 || filterValues.grade11 || filterValues.grade12) {
-
-      // Grade Filter Checks
-      if (ec.grade === "9th Grade" && filterValues.grade9) {
-        return true;
-      }
-
-      if (ec.grade === "10th Grade" && filterValues.grade10) {
-        return true;
-      }
-
-      if (ec.grade === "11th Grade" && filterValues.grade11) {
-        return true;
-      }
-
-      if (ec.grade === "12th Grade" && filterValues.grade12) {
-        return true;
-      }
-
-      if (ec.grade === "All Grades") {
-        return true;
-      }
-
-      return false;
-    }
-    return true;
-  });
-
   return (
     <BrowserRouter>
       <Routes>
         <Route index element={<Homepage />} />
-        <Route path="/extracurriculars" element={<Extracurriculars ecArray={filteredECs} filterChange={handleFilterChange} checkVal={filterValues} />} />
+        <Route path="/extracurriculars" element={<Extracurriculars ecArray={burnerArray} filterChange={handleFilterChange} checkVal={filterValues} />} />
       </Routes>
     </BrowserRouter>
   );
