@@ -106,7 +106,7 @@ export default function Extracurriculars(props) {
                 </div>
                 
                 {/* Filter Content Area*/}
-                <div className="grid grid-cols-4 h-max gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 h-max gap-4">
 
                     {/* Column Span 1 items */}
 
