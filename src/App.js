@@ -24,6 +24,22 @@ function App() {
   const [extracurricularsArray, setExtracurricularsArray] = useState([]);
   const [burnerArray, setBurnerArray] = useState([])
 
+  function handleSearchChange(event) {
+    console.log(event.target.value)
+
+    if (event.target.value === "") {
+      setBurnerArray(extracurricularsArray)
+    } else {
+      let filteredData = extracurricularsArray.filter((extracurricular) => {
+        if (extracurricular.name.toLowerCase().includes(event.target.value.toLowerCase())) {
+          return true;
+        }
+      })
+
+      setBurnerArray(filteredData)
+    }
+  }
+
   const [filterValues, setFilterValues] = useState({
     allgrades: false,
     grade9: false,
@@ -215,7 +231,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Homepage />} />
-          <Route path="/extracurriculars" element={<Extracurriculars ecArray={burnerArray} filterChange={handleFilterChange} checkVal={filterValues} />} />
+          <Route path="/extracurriculars" element={<Extracurriculars ecArray={burnerArray} filterChange={handleFilterChange} checkVal={filterValues} searchChange={handleSearchChange}/>} />
         </Routes>
       </BrowserRouter>
       <Analytics />
