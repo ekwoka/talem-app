@@ -34,4 +34,8 @@ code {
   .ec-tag {
     @apply p-2 bg-blue-300 font-outfit text-base rounded-lg;
   }
+
+  .ec-buttons {
+    @apply w-full px-5 py-2 bg-gradient-to-r from-blue-400 to-purple-600 text-white font-outfit rounded-lg hover:shadow-md flex justify-around items-center
+  }
 }

@@ -20,7 +20,14 @@ const firebaseConfig = {
 initializeApp(firebaseConfig)
 
 function App() {
+
+  let [filterValues, setFilterValues] = useState({
+    
+  })
+
   const [extracurricularsArray, setExtracurricularsArray] = useState([]);
+
+  
 
   useEffect(() => {
     const fetchExtracurriculars = async () => {
