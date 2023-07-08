@@ -1,3 +1,6 @@
+// In this file, I just store some random components that I MAY end up using. Half this code is plain gibberish, just ignore it
+
+
 const handleFilterChange = (name) => {
 
     setFilterValues((prevFilterValues) => ({

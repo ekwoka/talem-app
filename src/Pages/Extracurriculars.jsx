@@ -626,7 +626,7 @@ export default function Extracurriculars(props) {
                                     
                                     ) : (
                                     props.ecArray.map((ec) => (
-                                        <div className="shadow-lg rounded-lg bg-white grid grid-cols-4 my-2" key={ec.id}> {/* Individual EC Item holder*/}
+                                        <div className="shadow-lg rounded-lg bg-white grid grid-cols-1 lg:grid-cols-4 my-2" key={ec.id}> {/* Individual EC Item holder*/}
                                             <div className="col-span-3 p-10 flex flex-col justify-evenly"> {/* Col-span-3 EC info */}
                                                 <h1 className="text-5xl font-outfit">{ec.name}</h1>
                                                 <p className="">{ec.description}</p>
@@ -646,7 +646,7 @@ export default function Extracurriculars(props) {
                                                     })}
                                                 </div>
                                             </div>
-                                            <div className="col-span-1 p-10 flex flex-col gap-4 justify-evenly">
+                                            <div className="col-span-1 p-10 flex flex-col gap-4 justify-evenly items-center">
                                                 <img src={ec.src} alt={`Picture of ${ec.name} logo`} className="w-full shadow-md rounded-xl"/>
                                                 <a href={ec.link} target="_blank" className="ec-buttons">Visit Site <ArrowTopRightOnSquareIcon className="dropdown-main"/> </a>
                                                 <button className="ec-buttons">Bookmark <BookmarkIcon className="dropdown-main hover:text-yellow-500"/> </button>
