@@ -19,8 +19,10 @@ export default function Extracurriculars(props) {
         engineeringState: false,
         mathScienceState: false,
         businessSocialState: false,
-        humanityArtState: false
+        humanityArtState: false,
     })
+
+    let [advertState, setAdvertState] = useState(false)
 
     function changeAllDropdownState(bool) {
         const updatedDropState = Object.fromEntries(
@@ -610,10 +612,14 @@ export default function Extracurriculars(props) {
                                 
                             </div>
 
-                            <div className="mx-8 bg-yellow-300 py-2 font-outfit px-4 rounded-lg text-yellow-800 text-center shadow-md">
-                                Hi there! Do you find this website helpful? Well, it was made by a very sleep-deprived highschooler. It 
-                                would mean a lot if you could <span className=""><a href="https://pranavk.vercel.app" className="text-blue-700 underline">view his portfolio</a>, <a href="https://ko-fi.com/pranavk" className="text-blue-700 underline">donate him a coffee</a>, <a href="https://discord.com" className="text-blue-700 underline">or join Talem's discord server!</a></span>
-                            </div>
+                            {!advertState &&                           
+                                <div className="relative mx-8 bg-yellow-300 py-2 font-outfit px-4 rounded-lg text-yellow-800 text-center shadow-md">
+                                    <div className="absolute text-3xl top-0 right-[8px] text-yellow-800 cursor-pointer rotate-45 hover:text-black" onClick={() => setAdvertState(prevValue => !prevValue)}>+</div>
+                                    Hi there! Do you find this website helpful? Well, it was made by a very sleep-deprived highschooler. It 
+                                    would mean a lot if you could <span className=""><a href="https://pranavk.vercel.app" className="text-blue-700 underline">view his portfolio</a>, <a href="https://ko-fi.com/pranavk" className="text-blue-700 underline">donate him a coffee</a>, <a href="https://discord.com" className="text-blue-700 underline">or join Talem's discord server!</a></span>
+                                </div>
+                            }    
+
 
                             {/* Actual EC Components */}
                             <div className="w-full p-4 px-8 h-max flex-col gap-2 flex justify-center"> {/* Main EC holder */}
