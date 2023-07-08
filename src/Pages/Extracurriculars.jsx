@@ -595,10 +595,7 @@ export default function Extracurriculars(props) {
                             <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                             <div className="relative flex">
                                 <div className="w-full p-7">
-                                    <input type="search" id="default-search" onChange={props.searchChange} className="w-full p-4 text-base text-gray-900 border border-none shadow-xl rounded-lg bg-slate-100 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-outfit" placeholder="Search for a specific extracurricular (Ex: Robotics)" required />
-                                        <div className="w-full flex gap-2 p-3">
-                                            <button onClick={props.resetValues} className="bg-blue-300 p-2 font-outfit rounded-lg hover:bg-blue-400">Clear All Filters</button>
-                                        </div>                                    
+                                    <input type="search" id="default-search" onChange={props.searchChange} className="w-full p-4 text-base text-gray-900 border border-none shadow-xl rounded-lg bg-slate-100 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-outfit" placeholder="Search for a specific extracurricular (Ex: Robotics)" required />                                
                                 </div>
                                 
                             </div>
@@ -610,6 +607,10 @@ export default function Extracurriculars(props) {
                                     would mean a lot if you could <span className=""><a href="https://pranavk.vercel.app" target="_blank" className="text-blue-700 underline">view his portfolio</a>, <a href="https://ko-fi.com/pranavk" target="_blank" className="text-blue-700 underline">donate him a coffee</a>, <a href="https://discord.com" className="text-blue-700 underline" target="_blank">or join Talem's discord server!</a></span>
                                 </div>
                             }    
+
+                            <div className="w-full flex gap-2 p-3 justify-center">
+                                <button onClick={props.resetValues} className="bg-blue-300 p-2 font-outfit rounded-lg hover:bg-blue-400">Clear All Filters</button>
+                            </div>    
 
 
                             {/* Actual EC Components */}
