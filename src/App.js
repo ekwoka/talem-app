@@ -28,7 +28,8 @@ function App() {
     grade10: false,
     grade11: false,
     grade12: false,
-    inperson: false
+    inperson: false,
+    remote: false
   });
 
   const handleFilterChange = (name) => {
@@ -73,6 +74,10 @@ function App() {
         }
 
         if (updatedValues.inperson && !ecTags.includes("In Person")) {
+          return false
+        }
+
+        if (updatedValues.remote && !ecTags.includes("Remote/Virtual")) {
           return false
         }
 

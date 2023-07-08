@@ -169,14 +169,14 @@ export default function Extracurriculars(props) {
                                     <div className="w-full">
                                         <div className="flex items-center mb-4">
                                             <input id="inperson" type="checkbox" onChange={() => props.filterChange("inperson")} checked={props.checkVal["inperson"]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="inperson" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">In-Person</label>
+                                            <label htmlFor="inperson" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">In-Person Only</label>
                                         </div>
                                     </div>                            
 
                                     <div className="w-full">
                                         <div className="flex items-center mb-4">
-                                            <input id="remote" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="remote" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Remote</label>
+                                            <input id="remote" type="checkbox" onChange={() => props.filterChange("remote")} checked={props.checkVal["remote"]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                            <label htmlFor="remote" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Remote Only</label>
                                         </div>
                                     </div>
                                     </>
