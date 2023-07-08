@@ -36,6 +36,6 @@ code {
   }
 
   .ec-buttons {
-    @apply lg:w-full w-1/3 px-5 py-2 bg-gradient-to-r from-blue-400 to-purple-600 text-white font-outfit rounded-lg hover:shadow-md flex justify-around items-center
+    @apply lg:w-full sm:w-1/2 md:w-1/3 px-5 py-2 bg-gradient-to-r from-blue-400 to-purple-600 text-white font-outfit rounded-lg hover:shadow-md flex justify-around items-center
   }
 }

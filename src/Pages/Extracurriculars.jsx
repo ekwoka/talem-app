@@ -628,7 +628,7 @@ export default function Extracurriculars(props) {
                                     props.ecArray.map((ec) => (
                                         <div className="shadow-lg rounded-lg bg-white grid grid-cols-1 lg:grid-cols-4 my-2" key={ec.id}> {/* Individual EC Item holder*/}
                                             <div className="col-span-3 p-10 flex flex-col justify-evenly"> {/* Col-span-3 EC info */}
-                                                <h1 className="text-5xl font-outfit">{ec.name}</h1>
+                                                <h1 className="text-2xl md:text-3xl lg:text-5xl font-outfit">{ec.name}</h1>
                                                 <p className="">{ec.description}</p>
                                                 <div className="w-full flex flex-wrap gap-3">
                                                     <div className="ec-tag">{ec.commitment}</div>
