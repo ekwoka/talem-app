@@ -75,10 +75,37 @@ function App() {
     cybersecurity: false,
     softwaredev: false,
     machinelearning: false,
-    allengineering: false, // Start Here
+    allengineering: false, 
     mechengineering: false,
     electricalengineering: false,
-    aeroengineering: false
+    aeroengineering: false, // Math and beyond
+    allmathscience: false,
+    astronomy: false,
+    biology: false,
+    chemistry: false,
+    physics: false,
+    mathematics: false,
+    medicine: false, // Business and beyond
+    business: false,
+    economics: false,
+    marketing: false,
+    entrepreneurship: false,
+    leadership: false,
+    globalgovernment: false,
+    law: false,
+    politics: false,
+    geography: false, // Humanities and beyond
+    philosophy: false,
+    literature: false,
+    film: false,
+    music: false,
+    drama: false,
+    writing: false,
+    foreign: false,
+    photography: false,
+    debate: false
+    
+
   });
 
   const handleFilterChange = (name) => {
@@ -106,15 +133,6 @@ function App() {
         for (let i = 0; i < subjects.length; i++) {
           ecTags.push(subjects[i]);
         }
-
-
-        // if (updatedValues.grade9 && ecTags.includes("All Grades") ||
-        //     updatedValues.grade10 && ecTags.includes("All Grades") ||
-        //     updatedValues.grade11 && ecTags.includes("All Grades") ||
-        //     updatedValues.grade12 && ecTags.includes("All Grades")        
-        // ) {
-        //   return true
-        // }
 
         // Grade Filters
         if (updatedValues.allgrades && !ecTags.includes("All Grades")) {
@@ -156,7 +174,7 @@ function App() {
           return false
         }
 
-        if (updatedValues.businesscompany && !ecTags.includes("Business")) {
+        if (updatedValues.businesscompany && !ecTags.includes("Business Corporation")) {
           return false
         }
         
@@ -278,6 +296,114 @@ function App() {
         if (updatedValues.aeroengineering && !ecTags.includes("Aerospace Engineering")) {
           return false
         }
+
+        // Math and Science filters
+        if (updatedValues.allmathscience && !ecTags.includes("All Math + Science")) {
+          return false
+        }
+
+        if (updatedValues.astronomy && !ecTags.includes("Astronomy")) {
+          return false
+        }
+
+        if (updatedValues.biology && !ecTags.includes("Biology")) {
+          return false
+        }
+
+        if (updatedValues.chemistry && !ecTags.includes("Chemistry")) {
+          return false
+        }
+
+        
+        if (updatedValues.physics && !ecTags.includes("Physics")) {
+          return false
+        }
+
+        if (updatedValues.mathematics && !ecTags.includes("Mathematics")) {
+          return false
+        }
+
+        if (updatedValues.medicine && !ecTags.includes("Medicine")) {
+          return false
+        }
+
+        // Business + Social Science Filters
+
+        if (updatedValues.business && !ecTags.includes("Business")) {
+          return false
+        }
+
+        if (updatedValues.economics && !ecTags.includes("Economics")) {
+          return false
+        }
+
+        if (updatedValues.marketing && !ecTags.includes("Marketing")) {
+          return false
+        }
+
+        if (updatedValues.entrepreneurship && !ecTags.includes("Entrepreneurship")) {
+          return false
+        }
+
+        if (updatedValues.leadership && !ecTags.includes("Leadership")) {
+          return false
+        }
+
+        if (updatedValues.globalgovernment && !ecTags.includes("Global Government")) {
+          return false
+        }
+
+        if (updatedValues.law && !ecTags.includes("Law")) {
+          return false
+        }
+
+        if (updatedValues.politics && !ecTags.includes("Politics")) {
+          return false
+        }
+
+        if (updatedValues.geography && !ecTags.includes("Geography")) {
+          return false
+        }
+
+        // Humanities + Art filters (last ones!)
+        if (updatedValues.philosophy && !ecTags.includes("Philosophy")) {
+          return false
+        }
+
+        if (updatedValues.literature && !ecTags.includes("Literature and Language")) {
+          return false
+        }
+
+        if (updatedValues.film && !ecTags.includes("Film and Video Production")) {
+          return false
+        }
+
+        if (updatedValues.music && !ecTags.includes("Music")) {
+          return false
+        }
+
+        if (updatedValues.drama && !ecTags.includes("Theatre and Drama")) {
+          return false
+        }
+
+        if (updatedValues.writing && !ecTags.includes("Writing")) {
+          return false
+        }
+
+        if (updatedValues.foreign && !ecTags.includes("Foreign Languages")) {
+          return false
+        }
+
+        if (updatedValues.photography && !ecTags.includes("Photography")) {
+          return false
+        }
+
+        if (updatedValues.debate && !ecTags.includes("Debate")) {
+          return false
+        }
+
+        
+
 
         return true
   

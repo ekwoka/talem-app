@@ -98,6 +98,42 @@ export default function Extracurriculars(props) {
         {id: "club", text: "Club"}
     ]
 
+    let mathScienceItems = [
+        {id: "allmathscience", text: "All Math + Science"},
+        {id: "astronomy", text: "Astronomy"},
+        {id: "biology", text: "Biology"},
+        {id: "chemistry", text: "Chemistry"},
+        {id: "physics", text: "Physics"},
+        {id: "mathematics", text: "Mathematics"},
+        {id: "medicine", text: "Medicine"}
+    ]
+
+    let businessSocialItems = [
+        {id: "business", text: "Business"},
+        {id: "economics", text: "Economics"},
+        {id: "marketing", text: "Marketing/Advertising"},
+        {id: "entrepreneurship", text: "Entrepreneurship"},
+        {id: "leadership", text: "Leadership"},
+        {id: "globalgovernment", text: "Global Government"},
+        {id: "law", text: "Law"},
+        {id: "politics", text: "Politics"},
+        {id: "geography", text: "Geography"}
+    ]
+
+    let humanitiesArtItems   = [
+        {id: "philosophy", text: "Philosophy"},
+        {id: "literature", text: "Literature and Language"},
+        {id: "film", text: "Film and Video Production"},
+        {id: "music", text: "Music  "},
+        {id: "drama", text: "Theatre and Drama"},
+        {id: "writing", text: "Writing"},
+        {id: "foreign", text: "Foreign Languages"},
+        {id: "photography", text: "Photography"},
+        {id: "debate", text: "Debate"}
+    ]
+
+    
+
     function handleGrade(name) {
         setDropState((prevArray) => {
             return {
@@ -434,48 +470,16 @@ export default function Extracurriculars(props) {
 
                                 {dropState.mathScienceState && 
                                     <>
-                                    <div className="w-full mt-5">
-                                        <div className="flex items-center mb-4">
-                                            <input id="astronomy" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="astronomy" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Astronomy</label>
-                                        </div>
-                                    </div>                            
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="biology" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="biology" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Biology</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="chemistry" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="chemistry" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Chemistry</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="globalenviroscience" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="globalenviroscience" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Global/Environmental Science</label>
-                                        </div>
-                                    </div>
-
-                                    
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="mathematics" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="mathematics" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Mathematics</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="physics" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="physics" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Physics</label>
-                                        </div>
-                                    </div>
+                                        {mathScienceItems.map((item) => {
+                                            return (
+                                                <div className="w-full">
+                                                    <div className="flex items-center mb-4">
+                                                        <input id={item.id} name={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
                                     </>
                                 }
                             </div>
@@ -489,69 +493,16 @@ export default function Extracurriculars(props) {
 
                                 {dropState.businessSocialState && 
                                     <>
-                                    <div className="w-full mt-5">
-                                        <div className="flex items-center mb-4">
-                                            <input id="business" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="business" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Business</label>
-                                        </div>
-                                    </div>                            
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="economics" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="economics" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Economics</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="marketing" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="marketing" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Marketing/Advertising</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="entrepreneurship" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="entrepreneurship" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Entrepreneurship</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="leadership" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="leadership" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Leadership</label>
-                                        </div>
-                                    </div>
-
-                                    
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="globalgovernment" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="globalgovernment" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Global Government</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="law" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="law" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Law</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="politics" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="politics" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Politics</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="geography" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="geography" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Geography</label>
-                                        </div>
-                                    </div>
+                                        {businessSocialItems.map((item) => {
+                                            return (
+                                                <div className="w-full">
+                                                    <div className="flex items-center mb-4">
+                                                        <input id={item.id} name={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
                                     </>
                                 }
                             </div>
@@ -565,69 +516,16 @@ export default function Extracurriculars(props) {
 
                                 {dropState.humanityArtState && 
                                     <>
-                                    <div className="w-full mt-5">
-                                        <div className="flex items-center mb-4">
-                                            <input id="philosophy" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="philosophy" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Philosophy</label>
-                                        </div>
-                                    </div>                            
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="literature" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="literature" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Literature and Language</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="film" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="film" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Film and Video Production</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="music" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="music" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Music and Performing Arts</label>
-                                        </div>
-                                    </div>
-
-                                    
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="theatre" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="theatre" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Theater and Drama</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="writing" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="writing" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Writing</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="foreignlang" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="foreign" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Foreign Languages</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="photography" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="photography" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Photography</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full">
-                                        <div className="flex items-center mb-4">
-                                            <input id="debate" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="debate" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Debate</label>
-                                        </div>
-                                    </div>
+                                        {humanitiesArtItems.map((item) => {
+                                            return (
+                                                <div className="w-full">
+                                                    <div className="flex items-center mb-4">
+                                                        <input id={item.id} name={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
                                     </>
                                 }
                             </div>
