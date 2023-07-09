@@ -605,7 +605,7 @@ export default function Extracurriculars(props) {
                                                     
                                                     {ec.subjects.map((subject) => {
                                                         return (
-                                                            <div className="ec-tag">{subject}</div>
+                                                            <div className="ec-tag bg-green-300">{subject}</div>
                                                         )
                                                     })}
                                                 </div>
