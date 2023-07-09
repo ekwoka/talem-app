@@ -124,7 +124,7 @@ export default function Extracurriculars(props) {
         {id: "philosophy", text: "Philosophy"},
         {id: "literature", text: "Literature and Language"},
         {id: "film", text: "Film and Video Production"},
-        {id: "music", text: "Music  "},
+        {id: "music", text: "Music"},
         {id: "drama", text: "Theatre and Drama"},
         {id: "writing", text: "Writing"},
         {id: "foreign", text: "Foreign Languages"},
@@ -603,7 +603,7 @@ export default function Extracurriculars(props) {
                                             <div className="col-span-1 p-7 flex flex-col gap-4 justify-evenly items-center">
                                                 <img src={ec.src} alt={`Picture of ${ec.name} logo`} className="w-full shadow-md rounded-xl p-3"/>
                                                 <a href={ec.link} target="_blank" className="ec-buttons">Visit Site <ArrowTopRightOnSquareIcon className="dropdown-main"/> </a>
-                                                <button className="ec-buttons">Bookmark <BookmarkIcon className="dropdown-main hover:text-yellow-500"/> </button>
+                                                <button className="ec-buttons" onClick={() => alert("Bookmarks don't do anything yet, but that functionality is coming soon!")}>Bookmark <BookmarkIcon className="dropdown-main hover:text-yellow-500"/> </button>
                                             </div>
                                         </div>
                                     ))
