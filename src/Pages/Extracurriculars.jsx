@@ -689,7 +689,11 @@ export default function Extracurriculars(props) {
                                                     <div className="ec-tag">{ec.skill}</div>
                                                     <div className="ec-tag">{ec.soloTeam}</div>
                                                     <div className="ec-tag">{ec.type}</div>
-                                                    <div className="ec-tag">{ec.category}</div>
+                                                    {ec.category.map((category) => {
+                                                        return (
+                                                            <div className="ec-tag">{category}</div>
+                                                        )
+                                                    })}
                                                     
                                                     {ec.subjects.map((subject) => {
                                                         return (
