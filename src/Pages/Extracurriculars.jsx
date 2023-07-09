@@ -27,7 +27,6 @@ export default function Extracurriculars(props) {
 
     useEffect(() => {
       const data = window.localStorage.getItem('MY_APP_STATE');
-      console.log("data:", data)
       if ( data !== null ) setShowBanner(JSON.parse(data));
     }, []);
   
@@ -565,7 +564,7 @@ export default function Extracurriculars(props) {
                                 </div>
                             }       
 
-
+                            <div className="pl-10 text-lg pt-4 font-outfit">{props.ecArray.length} Search Results</div>
                             {/* Actual EC Components */}
                             <div className="w-full p-4 px-8 h-max flex-col gap-2 flex justify-center"> {/* Main EC holder */}
                                 {props.ecArray.length === 0 ? (
@@ -579,8 +578,7 @@ export default function Extracurriculars(props) {
                                             <span className="sr-only">Loading...</span>
                                         </div>                                    
                                     </>                                   
-                                    
-                                    ) : (
+                                    ) : (                         
                                     props.ecArray.map((ec) => (
                                         <div className="shadow-lg rounded-lg bg-white grid grid-cols-1 lg:grid-cols-4 my-2" key={ec.id}> {/* Individual EC Item holder*/}
                                             <div className="col-span-3 p-10 flex flex-col justify-evenly gap-3"> {/* Col-span-3 EC info */}

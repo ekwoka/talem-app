@@ -94,7 +94,7 @@ function App() {
   function handleSearchChange(event) {
     const searchTerm = event.target.value.toLowerCase();
     const filteredData = extracurricularsArray.filter((extracurricular) =>
-      extracurricular.name.toLowerCase().includes(searchTerm)
+      extracurricular.description.toLowerCase().includes(searchTerm) || extracurricular.name.toLowerCase().includes(searchTerm)
     );
     setBurnerArray(filteredData);
   }
