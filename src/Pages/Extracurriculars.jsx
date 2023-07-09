@@ -139,7 +139,8 @@ export default function Extracurriculars(props) {
         {id: "writing", text: "Writing"},
         {id: "foreign", text: "Foreign Languages"},
         {id: "photography", text: "Photography"},
-        {id: "debate", text: "Debate"}
+        {id: "debate", text: "Debate"},
+        {id: "art", text: "Art/Design"}
     ]
 
     

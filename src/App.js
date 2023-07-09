@@ -82,7 +82,8 @@ const filterConfig = [
   { name: "writing", tag: "Writing" },
   { name: "foreign", tag: "Foreign Languages" },
   { name: "photography", tag: "Photography" },
-  { name: "debate", tag: "Debate" }
+  { name: "debate", tag: "Debate" },
+  { name: "art", tag: "Art/Design"}
   // Add more filter names and tags here
 ];
 
