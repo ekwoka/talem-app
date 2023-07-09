@@ -15,6 +15,7 @@ export default function Extracurriculars(props) {
         teamIndividualState: false,
         skillLevelState: false,
         locationState: false,
+        activityCategoryState: false,
         programmingState: false,
         engineeringState: false,
         mathScienceState: false,
@@ -88,6 +89,13 @@ export default function Extracurriculars(props) {
         {id: "mechengineering", text: "Mechanical Engineering"},
         {id: "electricalengineering", text: "Electrical Engineering"},
         {id: "aeroengineering", text: "Aerospace Engineering"}
+    ]
+
+    let activityCategoryItems = [
+        {id: "communityservice", text: "Community Service"},
+        {id: "research", text: "Academic Research"},
+        {id: "competition", text: "Competition"},
+        {id: "club", text: "Club"}
     ]
 
     function handleGrade(name) {
@@ -336,6 +344,31 @@ export default function Extracurriculars(props) {
 
 
                             </div>
+
+                            {/* Category Type Filters */}
+                            <div className="filter">
+                                <div className="filter-title" onClick={() => handleGrade("activityCategoryState")}>
+                                    Activity Category
+                                    {dropState.activityCategoryState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
+                                </div>
+
+                                {dropState.activityCategoryState && 
+                                    <>
+                                        {activityCategoryItems.map((item) => { 
+                                            return (
+                                                <div className="w-full">
+                                                    <div className="flex items-center mb-4">
+                                                        <input id={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                    </>
+                                }
+
+
+                            </div>
                             
                         </div>
                         
@@ -481,6 +514,13 @@ export default function Extracurriculars(props) {
                                         <div className="flex items-center mb-4">
                                             <input id="entrepreneurship" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                             <label htmlFor="entrepreneurship" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Entrepreneurship</label>
+                                        </div>
+                                    </div>
+
+                                    <div className="w-full">
+                                        <div className="flex items-center mb-4">
+                                            <input id="leadership" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                            <label htmlFor="leadership" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Leadership</label>
                                         </div>
                                     </div>
 
@@ -649,6 +689,7 @@ export default function Extracurriculars(props) {
                                                     <div className="ec-tag">{ec.skill}</div>
                                                     <div className="ec-tag">{ec.soloTeam}</div>
                                                     <div className="ec-tag">{ec.type}</div>
+                                                    <div className="ec-tag">{ec.category}</div>
                                                     
                                                     {ec.subjects.map((subject) => {
                                                         return (

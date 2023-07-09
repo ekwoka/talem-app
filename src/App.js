@@ -67,6 +67,10 @@ function App() {
     westcoast: false,
     midwest: false,
     allusa: false,
+    communityservice: false,
+    research: false,
+    competition: false,
+    club: false,
     allprogramming: false,
     cybersecurity: false,
     softwaredev: false,
@@ -86,7 +90,7 @@ function App() {
       }
 
       const filteredData = extracurricularsArray.filter((ec) => {
-        let ecTags = [ec.commitment, ec.environment, ec.location, ec.skill, ec.soloTeam, ec.type]
+        let ecTags = [ec.commitment, ec.environment, ec.location, ec.skill, ec.soloTeam, ec.type, ec.category]
 
         if (typeof ec.grade === "string") {
           ecTags.push(ec.grade)
@@ -221,6 +225,23 @@ function App() {
         }
 
         if (updatedValues.allusa && !ecTags.includes("USA Only")) {
+          return false
+        }
+
+        // Activity Category filters
+        if (updatedValues.communityservice && !ecTags.includes("Community Service")) {
+          return false
+        }
+
+        if (updatedValues.research && !ecTags.includes("Academic Research")) {
+          return false
+        }
+
+        if (updatedValues.competition && !ecTags.includes("Competition")) {
+          return false
+        }
+
+        if (updatedValues.club && !ecTags.includes("Club")) {
           return false
         }
 
