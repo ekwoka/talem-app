@@ -45,7 +45,7 @@ const filterConfig = [
   { name: "eastcoast", tag: "East Coast (USA)" },
   { name: "westcoast", tag: "West Coast (USA)" },
   { name: "midwest", tag: "Mid West(USA)" },
-  { name: "allusa", tag: "USA Only" },
+  { name: "allusa", tag: "Only USA" },
   { name: "communityservice", tag: "Community Service" },
   { name: "research", tag: "Academic Research" },
   { name: "competition", tag: "Competition" },
