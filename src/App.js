@@ -86,7 +86,17 @@ function App() {
       }
 
       const filteredData = extracurricularsArray.filter((ec) => {
-        let ecTags = [ec.commitment, ec.environment, ec.grade, ec.location, ec.skill, ec.soloTeam, ec.type]
+        let ecTags = [ec.commitment, ec.environment, ec.location, ec.skill, ec.soloTeam, ec.type]
+
+        if (typeof ec.grade === "string") {
+          ecTags.push(ec.grade)
+        } else {
+          let grades = ec.grade
+          for (let i = 0; i < grades.length; i++) {
+            ecTags.push(grades[i]);
+          }
+        }
+
         let subjects = ec.subjects
 
         for (let i = 0; i < subjects.length; i++) {
