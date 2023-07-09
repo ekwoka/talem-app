@@ -91,7 +91,8 @@ export default function Extracurriculars(props) {
         {id: "allprogramming", text: "All Programming"},
         {id: "cybersecurity", text: "Cybersecurity"},
         {id: "softwaredev", text: "Software Development"},
-        {id: "machinelearning", text: "Machine Learning/AI"}
+        {id: "machinelearning", text: "Machine Learning/AI"},
+        {id: "competitiveprogramming", text: "Competitive Programming"}
     ]
 
     let engineeringItems = [

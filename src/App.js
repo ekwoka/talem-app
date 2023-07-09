@@ -54,6 +54,7 @@ const filterConfig = [
   { name: "cybersecurity", tag: "Cybersecurity" },
   { name: "softwaredev", tag: "Software Development" },
   { name: "machinelearning", tag: "Machine Learning/AI" },
+  { name: "competitiveprogramming", tag: "Competitive Programming" },
   { name: "allengineering", tag: "All Engineering" },
   { name: "mechengineering", tag: "Mechanical Engineering" },
   { name: "electricalengineering", tag: "Electrical Engineering" },
