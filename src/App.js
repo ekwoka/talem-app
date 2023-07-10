@@ -141,7 +141,7 @@ function App() {
         ec.commitment,
         ec.environment,
         ec.location,
-        ec.skill,
+        ...ec.skill,
         ec.soloTeam,
         ec.type,
         ...ec.category,
