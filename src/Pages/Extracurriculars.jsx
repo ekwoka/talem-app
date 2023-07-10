@@ -81,9 +81,9 @@ export default function Extracurriculars(props) {
 
     let locationItems = [
         {id: "global", text: "Global/Worldwide"},
-        {id: "eastcoast", text: "East Coast (USA)"},
-        {id: "westcoast", text: "West Coast (USA)"},
-        {id: "midwest", text: "MidWest (USA)"},
+        {id: "eastcoast", text: "East Coast (USA) Only"},
+        {id: "westcoast", text: "West Coast (USA) Only"},
+        {id: "midwest", text: "MidWest (USA) Only"},
         {id: "allusa", text: "Only USA"}
         
     ]
@@ -108,7 +108,7 @@ export default function Extracurriculars(props) {
         {id: "research", text: "Academic Research"},
         {id: "competition", text: "Competition"},
         {id: "club", text: "Club"},
-        {id: "program", text: "Pre-College Program/Summer Program"}
+        {id: "program", text: "Pre-College Program"}
     ]
 
     let mathScienceItems = [
