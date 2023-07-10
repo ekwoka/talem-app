@@ -115,6 +115,7 @@ export default function Extracurriculars(props) {
         {id: "biology", text: "Biology"},
         {id: "chemistry", text: "Chemistry"},
         {id: "physics", text: "Physics"},
+        {id: "environmentalscience", text: "Environmental Science"},
         {id: "mathematics", text: "Mathematics"},
         {id: "medicine", text: "Medicine"}
     ]
@@ -541,9 +542,7 @@ export default function Extracurriculars(props) {
                                     </>
                                 }
                             </div>
-
                         </div>
-
                     </div>
                     
                     {/* Search bar/ Col-span-3 stuff*/}

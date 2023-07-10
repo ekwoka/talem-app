@@ -62,6 +62,7 @@ const filterConfig = [
   { name: "allmathscience", tag: "All Math + Science" },
   { name: "astronomy", tag: "Astronomy" },
   { name: "biology", tag: "Biology" },
+  { name: "environmentalscience", tag: "Environmental Science"},
   { name: "chemistry", tag: "Chemistry" },
   { name: "physics", tag: "Physics" },
   { name: "mathematics", tag: "Mathematics" },
