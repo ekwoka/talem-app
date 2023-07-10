@@ -140,7 +140,7 @@ function App() {
       const ecTags = [
         ec.commitment,
         ec.environment,
-        ec.location,
+        ...ec.location,
         ...ec.skill,
         ec.soloTeam,
         ec.type,

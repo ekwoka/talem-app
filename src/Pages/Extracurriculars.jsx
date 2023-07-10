@@ -81,9 +81,9 @@ export default function Extracurriculars(props) {
 
     let locationItems = [
         {id: "global", text: "Global/Worldwide"},
-        {id: "eastcoast", text: "East Coast (USA) Only"},
-        {id: "westcoast", text: "West Coast (USA) Only"},
-        {id: "midwest", text: "MidWest (USA) Only"},
+        {id: "eastcoast", text: "East Coast (USA)"},
+        {id: "westcoast", text: "West Coast (USA)"},
+        {id: "midwest", text: "MidWest (USA)"},
         {id: "allusa", text: "Only USA"}
         
     ]
@@ -595,10 +595,22 @@ export default function Extracurriculars(props) {
                                                             <div className="ec-tag">{grade}</div>
                                                         )
                                                     })}
-                                                    <div className="ec-tag">{ec.location}</div>
-                                                    <div className="ec-tag">{ec.skill}</div>
+
+                                                    {ec.location.map((location) => {
+                                                        return (
+                                                            <div className="ec-tag">{location}</div>
+                                                        )
+                                                    })}
+
+                                                    {ec.skill.map((skill) => {
+                                                        return (
+                                                            <div className="ec-tag">{skill}</div>
+                                                        )
+                                                    })}
+
                                                     <div className="ec-tag">{ec.soloTeam}</div>
                                                     <div className="ec-tag">{ec.type}</div>
+
                                                     {ec.category.map((category) => {
                                                         return (
                                                             <div className="ec-tag">{category}</div>
