@@ -567,7 +567,7 @@ export default function Extracurriculars(props) {
                                 </div>
                             }       
 
-                            {props.ecArray.length > 0 && <div className="ml-10 text-lg mt-4 font-outfit">{props.ecArray.length} Search Results</div>}
+                            <div className="ml-10 text-lg mt-4 font-outfit">{props.ecArray.length} Search Results</div>
                             {/* Actual EC Components */}
                             <div className="w-full p-4 px-8 h-max flex-col gap-2 flex justify-center"> {/* Main EC holder */}
                                 {props.ecArray.length === 0 ? (
