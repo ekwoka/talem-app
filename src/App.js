@@ -75,7 +75,7 @@ const filterConfig = [
   { name: "globalgovernment", tag: "Global Government" },
   { name: "law", tag: "Law" },
   { name: "politics", tag: "Politics" },
-  { name: "geography", tag: "Geography" },
+  { name: "history", tag: "History" },
   { name: "philosophy", tag: "Philosophy" },
   { name: "literature", tag: "Literature and Language" },
   { name: "film", tag: "Film and Video Production" },

@@ -129,7 +129,7 @@ export default function Extracurriculars(props) {
         {id: "globalgovernment", text: "Global Government"},
         {id: "law", text: "Law"},
         {id: "politics", text: "Politics"},
-        {id: "geography", text: "Geography"}
+        {id: "history", text: "History"}
     ]
 
     let humanitiesArtItems   = [
