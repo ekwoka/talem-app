@@ -67,8 +67,8 @@ export default function Extracurriculars(props) {
 
     let teamIndividualItems = [
         {id: "teamandindividual", text:"Both Individual + Team"},
-        {id: "individualbased", text: "Individual/Solo Activites"},
-        {id: "teambased", text: "Team Based Activites"}
+        {id: "individualbased", text: "Individual/Solo Activites Only"},
+        {id: "teambased", text: "Team Based Activites Only"}
         
     ]
 

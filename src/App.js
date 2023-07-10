@@ -109,6 +109,7 @@ function App() {
       ...prevValues,
       [name]: !prevValues[name]
     }));
+
   };
 
   function resetFilterValues() {
