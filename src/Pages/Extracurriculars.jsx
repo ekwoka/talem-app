@@ -107,7 +107,8 @@ export default function Extracurriculars(props) {
         {id: "communityservice", text: "Community Service"},
         {id: "research", text: "Academic Research"},
         {id: "competition", text: "Competition"},
-        {id: "club", text: "Club"}
+        {id: "club", text: "Club"},
+        {id: "program", text: "Program/Summer Program"}
     ]
 
     let mathScienceItems = [

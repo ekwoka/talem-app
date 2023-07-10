@@ -51,6 +51,7 @@ const filterConfig = [
   { name: "research", tag: "Academic Research" },
   { name: "competition", tag: "Competition" },
   { name: "club", tag: "Club" },
+  { name: "program", tag: "Program" },
   { name: "allprogramming", tag: "All Programming" },
   { name: "cybersecurity", tag: "Cybersecurity" },
   { name: "softwaredev", tag: "Software Development" },
