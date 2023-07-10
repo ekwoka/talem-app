@@ -32,6 +32,7 @@ const filterConfig = [
   { name: "businesscompany", tag: "Business Corporation" },
   { name: "governmentagency", tag: "Government Agency" },
   { name: "educationalinstitution", tag: "Educational Institution" },
+  { name: "academicprogram", tag: "Academic Program"},
   { name: "shortterm", tag: "Short-Term" },
   { name: "longterm", tag: "Long-Term" },
   { name: "teamandindividual", tag: "Both Individual + Team" },

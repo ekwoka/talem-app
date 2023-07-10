@@ -56,7 +56,8 @@ export default function Extracurriculars(props) {
         {id: "nonprofit", text: "Nonprofit Organization"},
         {id: "businesscompany", text: "Business Enterprise"},
         {id: "governmentagency", text: "Government Agency"},
-        {id: "educationalinstitution", text: "Educational Institution"}
+        {id: "educationalinstitution", text: "Educational Institution"},
+        {id: "academicprogram", text: "Academic Program"}
     ]
 
     let durationItems = [
