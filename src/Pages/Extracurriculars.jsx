@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../Components/Header";
 import {useState, useEffect} from "react"
 import { PlusCircleIcon, MinusCircleIcon, AdjustmentsHorizontalIcon, XCircleIcon, ArrowTopRightOnSquareIcon, BookmarkIcon, TrashIcon } from '@heroicons/react/24/outline'
+import TopButton from "../Components/TopButton";
 import '../index.css';
 
 export default function Extracurriculars(props) {
@@ -167,6 +168,7 @@ export default function Extracurriculars(props) {
 
         <div>
             <Header />
+            <TopButton />
             <div className="bg-white dark:bg-slate-300">
                     
                 <div className="relative isolate px-6 pt-14 lg:px-8">
