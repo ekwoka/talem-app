@@ -89,7 +89,6 @@ export default function Extracurriculars(props) {
     ]
 
     let programmingItems = [
-        {id: "allprogramming", text: "All Programming"},
         {id: "cybersecurity", text: "Cybersecurity"},
         {id: "softwaredev", text: "Software Development"},
         {id: "machinelearning", text: "Machine Learning/AI"},
@@ -97,7 +96,6 @@ export default function Extracurriculars(props) {
     ]
 
     let engineeringItems = [
-        {id: "allengineering", text: "All Engineering"},
         {id: "mechengineering", text: "Mechanical Engineering"},
         {id: "electricalengineering", text: "Electrical Engineering"},
         {id: "aeroengineering", text: "Aerospace Engineering"}
@@ -112,7 +110,6 @@ export default function Extracurriculars(props) {
     ]
 
     let mathScienceItems = [
-        {id: "allmathscience", text: "All Math + Science"},
         {id: "astronomy", text: "Astronomy"},
         {id: "biology", text: "Biology"},
         {id: "chemistry", text: "Chemistry"},
@@ -145,6 +142,13 @@ export default function Extracurriculars(props) {
         {id: "photography", text: "Photography"},
         {id: "debate", text: "Debate"},
         {id: "art", text: "Art/Design"}
+    ]
+
+    let generalItems = [
+        {id: "allstem", text: "All STEM"},
+        {id: "allengineering", text: "All Engineering"},
+        {id: "allprogramming", text: "All Programming"},
+        {id: "allmathscience", text: "All Math + Science"},
     ]
 
     
@@ -422,9 +426,36 @@ export default function Extracurriculars(props) {
                             </div>
                             
                         </div>
+
+                        
                         
                         {/* Subject Filters*/}
                         <div className="shadow-[0_0_10px_-7px] rounded-lg flex flex-col justify-center items-center py-4 mt-4">
+
+                            {/* General Filters (All STEM)*/}
+                            <div className="filter bg-gradient-to-r from-purple-300 to-purple-600">
+                                <div className="filter-title" onClick={() => handleGrade("programmingState")}>
+                                    General Filters (All STEM, etc.) 
+                                    {dropState.programmingState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
+                                </div>
+
+                                {dropState.programmingState && 
+                                    <>
+                                        {generalItems.map((item) => {
+                                            return (
+                                                <div className="w-full">
+                                                    <div className="flex items-center mb-4">
+                                                        <input id={item.id} name={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                    </>
+                                }
+
+
+                            </div>
 
                             {/* Programming/Tech Filters*/}
                             <div className="filter bg-gradient-to-r from-purple-300 to-purple-600">
