@@ -16,6 +16,7 @@ export default function Extracurriculars(props) {
         skillLevelState: false,
         locationState: false,
         activityCategoryState: false,
+        generalFilterState: false,
         programmingState: false,
         engineeringState: false,
         mathScienceState: false,
@@ -201,7 +202,7 @@ export default function Extracurriculars(props) {
 
                                     {dropState.settingState && 
                                         <>
-                                            <div className="w-full p-3 my-2 flex flex-col justify-center items-center gap-4">
+                                            <div className="w-full p-3 my-2 flex flex-col justify-center items-center gap-4 relative">
                                                 <button className="w-9/12 bg-blue-500 p-3 rounded-md shadow-md font-outfit text-white flex justify-between" onClick={() => changeAllDropdownState(false)}>Close All Filters <XCircleIcon className="dropdown-main"/></button>
                                                 <button className="w-9/12 bg-blue-500 p-3 rounded-md shadow-md font-outfit text-white flex justify-between" onClick={() => changeAllDropdownState(true)}>Open All Filters <PlusCircleIcon className="dropdown-main"/></button>
                                                 <button className="w-9/12 bg-blue-500 p-3 rounded-md shadow-md font-outfit text-white flex justify-between" onClick={props.resetValues} >Clear All Filters <TrashIcon className="dropdown-main"/></button>
@@ -219,7 +220,7 @@ export default function Extracurriculars(props) {
                             <div className="filter">
                                 <div className="filter-title" onClick={() => handleGrade("gradeState")}>
                                     Sort by Grade:
-                                    {dropState.gradeState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
+                                    {dropState.gradeState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>} 
                                 </div>
 
                                 {dropState.gradeState && 
@@ -229,7 +230,7 @@ export default function Extracurriculars(props) {
                                                 <div className="w-full">
                                                     <div className="flex items-center mb-4">
                                                         <input id={item.id} name={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                                        <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                        <label data-tooltip-target="tooltip-defailt" htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>                                           
                                                     </div>
                                                 </div>
                                             )
@@ -434,12 +435,12 @@ export default function Extracurriculars(props) {
 
                             {/* General Filters (All STEM)*/}
                             <div className="filter bg-gradient-to-r from-green-300 to-green-500">
-                                <div className="filter-title" onClick={() => handleGrade("programmingState")}>
+                                <div className="filter-title" onClick={() => handleGrade("generalFilterState")}>
                                     General Filters (All STEM, etc.) 
-                                    {dropState.programmingState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
+                                    {dropState.generalFilterState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
                                 </div>
 
-                                {dropState.programmingState && 
+                                {dropState.generalFilterState && 
                                     <>
                                         {generalItems.map((item) => {
                                             return (
