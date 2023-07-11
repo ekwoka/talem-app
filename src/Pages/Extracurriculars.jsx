@@ -244,7 +244,7 @@ export default function Extracurriculars(props) {
                             {/* Environment Filters */}
                             <div className="filter">
                                 <div className="filter-title" onClick={() => handleGrade("environmentState")}>
-                                    Work Environment <br /> (In Person/Remote)
+                                    Activity Environment/Format <br /> (In Person/Remote)
                                     {dropState.environmentState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
                                 </div>
 
