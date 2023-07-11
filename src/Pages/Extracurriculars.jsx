@@ -433,7 +433,7 @@ export default function Extracurriculars(props) {
                         <div className="shadow-[0_0_10px_-7px] rounded-lg flex flex-col justify-center items-center py-4 mt-4">
 
                             {/* General Filters (All STEM)*/}
-                            <div className="filter bg-gradient-to-r from-purple-300 to-purple-600">
+                            <div className="filter bg-gradient-to-r from-green-300 to-green-500">
                                 <div className="filter-title" onClick={() => handleGrade("programmingState")}>
                                     General Filters (All STEM, etc.) 
                                     {dropState.programmingState ? <MinusCircleIcon className="dropdown-main"/> : <PlusCircleIcon className="dropdown-main"/>}
