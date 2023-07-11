@@ -165,9 +165,9 @@ export default function Extracurriculars(props) {
 
     return (
 
-        <>
+        <div>
             <Header />
-            <div className="bg-white">
+            <div className="bg-white dark:bg-slate-300">
                     
                 <div className="relative isolate px-6 pt-14 lg:px-8">
                 <div
@@ -675,6 +675,6 @@ export default function Extracurriculars(props) {
 
                 </div>
             </div>
-        </>
+        </div>
     )
 }

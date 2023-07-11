@@ -98,6 +98,20 @@ function App() {
   const [filterValues, setFilterValues] = useState({});
 
   function handleSearchChange(event) {
+
+
+    // let arrayTitles = []
+    // Used for getting all the titles from one ec array
+    // extracurricularsArray.forEach(obj => {
+    //   for (let key in obj) {
+    //     if (key === 'name') {
+    //       arrayTitles.push(obj[key])
+    //     }
+    //   }
+    // });
+
+    // console.log(arrayTitles)
+
     const searchTerm = event.target.value.toLowerCase();
     const filteredData = extracurricularsArray.filter((extracurricular) =>
       extracurricular.description.toLowerCase().includes(searchTerm) || extracurricular.name.toLowerCase().includes(searchTerm)
