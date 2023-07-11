@@ -41,7 +41,7 @@ export default function HeroMain() {
 
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-7xl ">
-                Meet <span className="text-blue-500">Talem</span>, your guide to highschool extracurriculars and internships
+                Meet <span className="text-blue-500">Talem</span>, <span className="italic underline">your</span> guide to highschool extracurriculars and internships
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                   Discovering the perfect extracurriculars and internships can be daunting, 
