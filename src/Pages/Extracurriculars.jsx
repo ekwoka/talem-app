@@ -617,9 +617,10 @@ export default function Extracurriculars(props) {
                             <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                             <div className="relative flex">
                                 <div className="w-full p-7 pb-2 flex justify-around">
-                                    <input type="search" id="default-search" onChange={props.searchChange} className="w-9/12 p-4 text-base text-gray-900 border border-none shadow-xl rounded-lg bg-slate-100 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-outfit" placeholder="Search for a specific extracurricular (Ex: Robotics)" required />
-                                    <div onClick={handleBookmarkVal} className="p-2 w-3/12 mx-2 shadow-xl rounded-lg bg-slate-100 flex justify-center items-center text-center border-2 font-outfit text-md cursor-pointer hover:border-2 hover:border-black">
-                                        {showBookmarked ? "Unshow Bookmarked" : "Show Bookmarked"}
+                                    <input type="search" id="default-search" onChange={props.searchChange} className="w-[95%] p-4 text-base text-gray-900 border border-none shadow-xl rounded-lg bg-slate-100 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-outfit" placeholder="Search for a specific extracurricular (Ex: Robotics)" required />
+                                    <div onClick={handleBookmarkVal} className="relative p-2 w-[5%] mx-2 shadow-xl rounded-lg bg-slate-100 flex justify-center items-center text-center border-2 font-outfit text-md cursor-pointer hover:border-2 hover:border-black">
+                                        <BookmarkIcon className="w-6 h-6"/>
+                                        <div className="absolute -top-3 -right-4 py-1 px-3 bg-cyan-600 text-white rounded-full">{bookmarkedItems.length}</div>
                                     </div>                                
                                 </div>                                
                             </div>
