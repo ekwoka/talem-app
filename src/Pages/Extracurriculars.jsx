@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Components/Header";
 import {useState, useEffect} from "react"
-import { PlusCircleIcon, MinusCircleIcon, AdjustmentsHorizontalIcon, XCircleIcon, ArrowTopRightOnSquareIcon, BookmarkIcon, TrashIcon } from '@heroicons/react/24/outline'
+import { PlusCircleIcon, MinusCircleIcon, AdjustmentsHorizontalIcon, XCircleIcon, ArrowTopRightOnSquareIcon, TrashIcon, BookmarkIcon } from '@heroicons/react/24/outline'
 import TopButton from "../Components/TopButton";
 import '../index.css';
 
@@ -26,6 +26,8 @@ export default function Extracurriculars(props) {
     })
 
     const [showBanner, setShowBanner] = useState(true);
+    const [showBookmarked, setShowBookmark] = useState(false)
+    const [bookmarkedItems, setBookmarkedItems] = useState([]);
 
     useEffect(() => {
       const data = window.localStorage.getItem('MY_APP_STATE');
@@ -35,6 +37,27 @@ export default function Extracurriculars(props) {
     useEffect(() => {
       window.localStorage.setItem('MY_APP_STATE', JSON.stringify(showBanner));
     }, [showBanner]); 
+
+    function handleBookmark(ec) {
+        // Check if the item is already bookmarked
+        const isBookmarked = bookmarkedItems.some(item => item.id === ec.id);
+      
+        if (isBookmarked) {
+          // Item is already bookmarked, remove it
+          const updatedItems = bookmarkedItems.filter(item => item.id !== ec.id);
+          setBookmarkedItems(updatedItems);
+        } else {
+          // Item is not bookmarked, add it
+          const updatedItems = [...bookmarkedItems, ec];
+          setBookmarkedItems(updatedItems);
+        }
+
+        console.log(bookmarkedItems)
+    }
+
+    function handleBookmarkVal() {
+        setShowBookmark(prevValue => !prevValue)
+    }
 
 
     function changeAllDropdownState(bool) {
@@ -159,9 +182,7 @@ export default function Extracurriculars(props) {
           .map((obj) => obj.tag);
     };
 
-    const tagsArray = getTagsWithTrueValue(props.allFilters);
-
-    
+    const tagsArray = getTagsWithTrueValue(props.allFilters);    
 
     function handleGrade(name) {
         setDropState((prevArray) => {
@@ -595,21 +616,25 @@ export default function Extracurriculars(props) {
                             {/* Search Bar */}
                             <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                             <div className="relative flex">
-                                <div className="w-full p-7 pb-2">
-                                    <input type="search" id="default-search" onChange={props.searchChange} className="w-full p-4 text-base text-gray-900 border border-none shadow-xl rounded-lg bg-slate-100 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-outfit" placeholder="Search for a specific extracurricular (Ex: Robotics)" required />                                
+                                <div className="w-full p-7 pb-2 flex justify-around">
+                                    <input type="search" id="default-search" onChange={props.searchChange} className="w-9/12 p-4 text-base text-gray-900 border border-none shadow-xl rounded-lg bg-slate-100 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-outfit" placeholder="Search for a specific extracurricular (Ex: Robotics)" required />
+                                    <div onClick={handleBookmarkVal} className="p-2 w-3/12 mx-2 shadow-xl rounded-lg bg-slate-100 flex justify-center items-center text-center border-2 font-outfit text-md cursor-pointer hover:border-2 hover:border-black">
+                                        {showBookmarked ? "Unshow Bookmarked" : "Show Bookmarked"}
+                                    </div>                                
                                 </div>                                
                             </div>
 
                             {showBanner &&                           
-                                <div className="relative mx-8 bg-yellow-300 py-2 font-outfit px-6 rounded-lg text-yellow-800 text-center shadow-md">
+                                <div className="relative mx-8 bg-yellow-300 py-2 my-2 font-outfit px-6 rounded-lg text-yellow-800 text-center shadow-md">
                                     <div className="absolute text-3xl top-0 right-[8px] text-yellow-800 cursor-pointer rotate-45 hover:text-black" onClick={() => setShowBanner(false)}>+</div>
                                     Hi there, I'm Pranav! I'm the developer of <span className="text-blue-700">Talem</span> and I'm glad you're using it/finding it useful! If you want to support me 
                                     you can do so by <span className=""><a href="https://pranavk.vercel.app" target="_blank" className="text-blue-700 underline">viewing my portfolio</a>, <a href="https://ko-fi.com/pranavk" target="_blank" className="text-blue-700 underline">buying me a coffee</a>, <a href="https://discord.com" className="text-blue-700 underline" target="_blank">or joining Talem's discord server!</a></span>
                                 </div>
                             }       
 
-                            <div className="ml-10 text-lg mt-4 font-outfit">{props.ecArray.length} Search Results</div>
+                            <div className="ml-10 text-lg mt-4 font-outfit">{showBookmarked ? (bookmarkedItems.length > 0 ? bookmarkedItems.length + " Search Result(s)" : "Looks like you got no bookmarks ):") : props.ecArray.length + " Search Results"}</div>
                             
+                            {/* Show Tags */}
                             <div className="mx-10 my-2 flex justify-center gap-2">
                                 {tagsArray.map((tag) => {
                                     return (<div className="p-2 bg-blue-300 w-max font-outfit rounded-md shadow-sm">{tag}</div>)
@@ -630,7 +655,7 @@ export default function Extracurriculars(props) {
                                         </div>                                    
                                     </>                                   
                                     ) : (                         
-                                    props.ecArray.map((ec) => (
+                                    (showBookmarked ? bookmarkedItems : props.ecArray).map((ec) => (
                                         <div className="shadow-lg rounded-lg bg-white grid grid-cols-1 lg:grid-cols-4 my-2" key={ec.id}> {/* Individual EC Item holder*/}
                                             <div className="col-span-3 p-10 flex flex-col justify-evenly gap-3"> {/* Col-span-3 EC info */}
                                                 <h1 className="text-2xl md:text-3xl lg:text-5xl font-outfit">{ec.name}</h1>
@@ -675,7 +700,14 @@ export default function Extracurriculars(props) {
                                             <div className="col-span-1 p-7 flex flex-col gap-4 justify-evenly items-center">
                                                 <img src={ec.src} alt={`Picture of ${ec.name} logo`} className="w-full shadow-md rounded-xl p-3"/>
                                                 <a href={ec.link} target="_blank" className="ec-buttons">Visit Site <ArrowTopRightOnSquareIcon className="dropdown-main"/> </a>
-                                                <button className="ec-buttons" onClick={() => console.log(tagsArray)}>Bookmark <BookmarkIcon className="dropdown-main hover:text-yellow-500"/> </button>
+                                                <button className="ec-buttons" onClick={() => handleBookmark(ec)}>
+                                                    {bookmarkedItems.some(item => item.id === ec.id) ? "Remove Bookmark" : "Bookmark"}
+                                                    {bookmarkedItems.some(item => item.id === ec.id) ? (
+                                                    <BookmarkIcon className="dropdown-main hover:text-yellow-500" />
+                                                    ) : (
+                                                    <BookmarkIcon className="dropdown-main hover:text-yellow-500" />
+                                                    )}
+                                                </button>
                                             </div>
                                         </div>
                                     ))
