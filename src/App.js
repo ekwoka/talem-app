@@ -19,80 +19,82 @@ const firebaseConfig = {
 
 initializeApp(firebaseConfig);
 
-const filterConfig = [
-  { name: "allgrades", tag: "All Grades" },
-  { name: "grade9", tag: "9th Grade" },
-  { name: "grade10", tag: "10th Grade" },
-  { name: "grade11", tag: "11th Grade" },
-  { name: "grade12", tag: "12th Grade" },
-  { name: "inperson", tag: "In Person" },
-  { name: "remote", tag: "Remote/Virtual" },
-  { name: "hybrid", tag: "Hybrid" },
-  { name: "nonprofit", tag: "Nonprofit Organization" },
-  { name: "businesscompany", tag: "Business Corporation" },
-  { name: "governmentagency", tag: "Government Agency" },
-  { name: "educationalinstitution", tag: "Educational Institution" },
-  { name: "academicprogram", tag: "Academic Program"},
-  { name: "shortterm", tag: "Short-Term" },
-  { name: "longterm", tag: "Long-Term" },
-  { name: "teamandindividual", tag: "Both Individual + Team" },
-  { name: "individualbased", tag: "Individual-Based" },
-  { name: "teambased", tag: "Team-Based" },
-  { name: "allskillevels", tag: "All Skill Levels" },
-  { name: "beginnerfriendly", tag: "Beginner Friendly" },
-  { name: "intermediatelevel", tag: "Intermediate" },
-  { name: "advancedlevel", tag: "Advanced" },
-  { name: "global", tag: "Global/Worldwide" },
-  { name: "eastcoast", tag: "East Coast (USA)" },
-  { name: "westcoast", tag: "West Coast (USA)" },
-  { name: "midwest", tag: "Mid West(USA)" },
-  { name: "allusa", tag: "Only USA" },
-  { name: "communityservice", tag: "Community Service" },
-  { name: "research", tag: "Academic Research" },
-  { name: "competition", tag: "Competition" },
-  { name: "club", tag: "Club" },
-  { name: "program", tag: "Program" },
-  { name: "allstem", tag: "All STEM" },
-  { name: "allprogramming", tag: "All Programming" },
-  { name: "cybersecurity", tag: "Cybersecurity" },
-  { name: "softwaredev", tag: "Software Development" },
-  { name: "machinelearning", tag: "Machine Learning/AI" },
-  { name: "competitiveprogramming", tag: "Competitive Programming" },
-  { name: "allengineering", tag: "All Engineering" },
-  { name: "mechengineering", tag: "Mechanical Engineering" },
-  { name: "electricalengineering", tag: "Electrical Engineering" },
-  { name: "aeroengineering", tag: "Aerospace Engineering" },
-  { name: "allmathscience", tag: "All Math + Science" },
-  { name: "astronomy", tag: "Astronomy" },
-  { name: "biology", tag: "Biology" },
-  { name: "environmentalscience", tag: "Environmental Science"},
-  { name: "chemistry", tag: "Chemistry" },
-  { name: "physics", tag: "Physics" },
-  { name: "mathematics", tag: "Mathematics" },
-  { name: "medicine", tag: "Medicine" },
-  { name: "business", tag: "Business" },
-  { name: "economics", tag: "Economics" },
-  { name: "marketing", tag: "Marketing" },
-  { name: "entrepreneurship", tag: "Entrepreneurship" },
-  { name: "leadership", tag: "Leadership" },
-  { name: "globalgovernment", tag: "Global Government" },
-  { name: "law", tag: "Law" },
-  { name: "politics", tag: "Politics" },
-  { name: "history", tag: "History" },
-  { name: "philosophy", tag: "Philosophy" },
-  { name: "literature", tag: "Literature and Language" },
-  { name: "film", tag: "Film and Video Production" },
-  { name: "music", tag: "Music" },
-  { name: "drama", tag: "Theatre and Drama" },
-  { name: "writing", tag: "Writing" },
-  { name: "foreign", tag: "Foreign Languages" },
-  { name: "photography", tag: "Photography" },
-  { name: "debate", tag: "Debate" },
-  { name: "art", tag: "Art/Design"}
-  // Add more filter names and tags here
-];
+
 
 function App() {
+
+  const [filterConfig, setFilterConfig] = useState([
+    { name: "allgrades", tag: "All Grades", value: false },
+    { name: "grade9", tag: "9th Grade", value: false },
+    { name: "grade10", tag: "10th Grade", value: false },
+    { name: "grade11", tag: "11th Grade", value: false },
+    { name: "grade12", tag: "12th Grade", value: false },
+    { name: "inperson", tag: "In Person", value: false },
+    { name: "remote", tag: "Remote/Virtual", value: false },
+    { name: "hybrid", tag: "Hybrid", value: false },
+    { name: "nonprofit", tag: "Nonprofit Organization", value: false },
+    { name: "businesscompany", tag: "Business Corporation", value: false },
+    { name: "governmentagency", tag: "Government Agency", value: false },
+    { name: "educationalinstitution", tag: "Educational Institution", value: false },
+    { name: "academicprogram", tag: "Academic Program", value: false },
+    { name: "shortterm", tag: "Short-Term", value: false },
+    { name: "longterm", tag: "Long-Term", value: false },
+    { name: "teamandindividual", tag: "Both Individual + Team", value: false },
+    { name: "individualbased", tag: "Individual-Based", value: false },
+    { name: "teambased", tag: "Team-Based", value: false },
+    { name: "allskillevels", tag: "All Skill Levels", value: false },
+    { name: "beginnerfriendly", tag: "Beginner Friendly", value: false },
+    { name: "intermediatelevel", tag: "Intermediate", value: false },
+    { name: "advancedlevel", tag: "Advanced", value: false },
+    { name: "global", tag: "Global/Worldwide", value: false },
+    { name: "eastcoast", tag: "East Coast (USA)", value: false },
+    { name: "westcoast", tag: "West Coast (USA)", value: false },
+    { name: "midwest", tag: "Mid West(USA)", value: false },
+    { name: "allusa", tag: "Only USA", value: false },
+    { name: "communityservice", tag: "Community Service", value: false },
+    { name: "research", tag: "Academic Research", value: false },
+    { name: "competition", tag: "Competition", value: false },
+    { name: "club", tag: "Club", value: false },
+    { name: "program", tag: "Program", value: false },
+    { name: "allstem", tag: "All STEM", value: false },
+    { name: "allprogramming", tag: "All Programming", value: false },
+    { name: "cybersecurity", tag: "Cybersecurity", value: false },
+    { name: "softwaredev", tag: "Software Development", value: false },
+    { name: "machinelearning", tag: "Machine Learning/AI", value: false },
+    { name: "competitiveprogramming", tag: "Competitive Programming", value: false },
+    { name: "allengineering", tag: "All Engineering", value: false },
+    { name: "mechengineering", tag: "Mechanical Engineering", value: false },
+    { name: "electricalengineering", tag: "Electrical Engineering", value: false },
+    { name: "aeroengineering", tag: "Aerospace Engineering", value: false },
+    { name: "allmathscience", tag: "All Math + Science", value: false },
+    { name: "astronomy", tag: "Astronomy", value: false },
+    { name: "biology", tag: "Biology", value: false },
+    { name: "environmentalscience", tag: "Environmental Science", value: false },
+    { name: "chemistry", tag: "Chemistry", value: false },
+    { name: "physics", tag: "Physics", value: false },
+    { name: "mathematics", tag: "Mathematics", value: false },
+    { name: "medicine", tag: "Medicine", value: false },
+    { name: "business", tag: "Business", value: false },
+    { name: "economics", tag: "Economics", value: false },
+    { name: "marketing", tag: "Marketing", value: false },
+    { name: "entrepreneurship", tag: "Entrepreneurship", value: false },
+    { name: "leadership", tag: "Leadership", value: false },
+    { name: "globalgovernment", tag: "Global Government", value: false },
+    { name: "law", tag: "Law", value: false },
+    { name: "politics", tag: "Politics", value: false },
+    { name: "history", tag: "History", value: false },
+    { name: "philosophy", tag: "Philosophy", value: false },
+    { name: "literature", tag: "Literature and Language", value: false },
+    { name: "film", tag: "Film and Video Production", value: false },
+    { name: "music", tag: "Music", value: false },
+    { name: "drama", tag: "Theatre and Drama", value: false },
+    { name: "writing", tag: "Writing", value: false },
+    { name: "foreign", tag: "Foreign Languages", value: false },
+    { name: "photography", tag: "Photography", value: false },
+    { name: "debate", tag: "Debate", value: false },
+    { name: "art", tag: "Art/Design", value: false }
+  ]);
+
   const [extracurricularsArray, setExtracurricularsArray] = useState([]);
   const [burnerArray, setBurnerArray] = useState([]);
   const [filterValues, setFilterValues] = useState({});
@@ -119,11 +121,25 @@ function App() {
     setBurnerArray(filteredData);
   }
 
+  const toggleValueByName = (arr, name) => {
+    return arr.map((obj) => {
+      if (obj.name === name) {
+        return {
+          ...obj,
+          value: !obj.value,
+        };
+      }
+      return obj;
+    });
+  };
+
   const handleFilterChange = (name) => {
     setFilterValues((prevValues) => ({
       ...prevValues,
       [name]: !prevValues[name]
     }));
+
+    setFilterConfig(toggleValueByName(filterConfig, name))
 
   };
 
@@ -184,6 +200,7 @@ function App() {
                 filterChange={handleFilterChange}
                 checkVal={filterValues}
                 searchChange={handleSearchChange}
+                allFilters={filterConfig}
               />
             }
           />
