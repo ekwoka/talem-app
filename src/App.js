@@ -127,12 +127,24 @@ function App() {
     }));
 
     setFilterConfig(toggleValueByName(filterConfig, name))
+    console.log(filterConfig)
 
   };
 
   function resetFilterValues() {
     setFilterValues({});
     handleFilterChange(null); // Activate the check filter function to clear the filters
+
+    setFilterConfig((prevConfig) =>
+      prevConfig.map((filter) => {
+        return {
+          ...filter,
+          value: false
+        }
+      })
+  );
+
+  console.log(filterConfig)
 
   }  
 

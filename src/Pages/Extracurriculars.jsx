@@ -610,11 +610,11 @@ export default function Extracurriculars(props) {
 
                             <div className="ml-10 text-lg mt-4 font-outfit">{props.ecArray.length} Search Results</div>
                             
-                            {/* <div className="mx-10 my-2 flex justify-center gap-2">
+                            <div className="mx-10 my-2 flex justify-center gap-2">
                                 {tagsArray.map((tag) => {
                                     return (<div className="p-2 bg-blue-300 w-max font-outfit rounded-md shadow-sm">{tag}</div>)
                                 })}
-                            </div> */}
+                            </div>
 
                             {/* Actual EC Components */}
                             <div className="w-full p-4 px-8 h-max flex-col gap-2 flex justify-center"> {/* Main EC holder */}
