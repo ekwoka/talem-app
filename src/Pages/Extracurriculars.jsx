@@ -224,7 +224,7 @@ export default function Extracurriculars(props) {
                 </div>
                 
                 {/* Filter Content Area*/}
-                <div className="grid grid-cols-1 md:grid-cols-4 h-max gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 h-max lg:gap-4">
 
                     {/* Column Span 1 items */}
 
@@ -624,8 +624,8 @@ export default function Extracurriculars(props) {
                             <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                             <div className="relative flex">
                                 <div className="w-full p-7 pb-2 flex justify-around">
-                                    <input type="search" id="default-search" onChange={props.searchChange} className="w-[95%] p-4 text-base text-gray-900 border border-none shadow-xl rounded-lg bg-slate-100 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-outfit" placeholder="Search for a specific extracurricular (Ex: Robotics)" required />
-                                    <div onClick={handleBookmarkVal} className="relative p-2 w-[5%] mx-2 shadow-xl rounded-lg bg-slate-100 flex justify-center items-center text-center border-2 font-outfit text-md cursor-pointer hover:border-2 hover:border-cyan-600">
+                                    <input type="search" id="default-search" onChange={props.searchChange} className="w-[85%] xl:w-[95%] p-4 text-base text-gray-900 border border-none shadow-xl rounded-lg bg-slate-100 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-outfit" placeholder="Search for a specific extracurricular (Ex: Robotics)" required />
+                                    <div onClick={handleBookmarkVal} className="relative p-2 w-[15%] xl:w-[5%] mx-2 shadow-xl rounded-lg bg-slate-100 flex justify-center items-center text-center border-2 font-outfit text-md cursor-pointer hover:border-2 hover:border-cyan-600">
                                         <BookmarkIcon className="w-6 h-6"/>
                                         <div className="absolute -top-3 -right-4 py-1 px-3 bg-cyan-600 text-white rounded-full">{bookmarkedItems.length}</div>
                                     </div>                                
@@ -705,8 +705,8 @@ export default function Extracurriculars(props) {
                                                     })}
                                                 </div>
                                             </div>
-                                            <div className="col-span-1 p-7 flex flex-col gap-4 justify-evenly items-center">
-                                                <img src={ec.src} alt={`Picture of ${ec.name} logo`} className="w-full shadow-md rounded-xl p-3"/>
+                                            <div className="col-span-1 p-7 flex flex-col gap-4 justify-center items-center">
+                                                <img src={ec.src} alt={`Picture of ${ec.name} logo`} className="w-[60%] lg:w-full shadow-md rounded-xl p-3"/>
                                                 <a href={ec.link} target="_blank" className="ec-buttons">Visit Site <ArrowTopRightOnSquareIcon className="dropdown-main"/> </a>
                                                 <button className="ec-buttons" onClick={() => handleBookmark(ec)}>
                                                     {bookmarkedItems.some(item => item.id === ec.id) ? "Remove Bookmark" : "Bookmark"}
