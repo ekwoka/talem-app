@@ -32,11 +32,18 @@ export default function Extracurriculars(props) {
     useEffect(() => {
       const data = window.localStorage.getItem('MY_APP_STATE');
       if ( data !== null ) setShowBanner(JSON.parse(data));
+
+      const bookmarkedData = window.localStorage.getItem('BOOKMARKED_ITEMS_LIST')
+      if (bookmarkedData !== null) setBookmarkedItems(JSON.parse(bookmarkedData))
     }, []);
   
     useEffect(() => {
       window.localStorage.setItem('MY_APP_STATE', JSON.stringify(showBanner));
     }, [showBanner]); 
+
+    useEffect(() => {
+        window.localStorage.setItem('BOOKMARKED_ITEMS_LIST', JSON.stringify(bookmarkedItems));
+      }, [bookmarkedItems]); 
 
     function handleBookmark(ec) {
         // Check if the item is already bookmarked
