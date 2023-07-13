@@ -38,14 +38,14 @@ export default function Header() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+              <a onClick={() => alert("Coming Soon, stay tuned for updates!")} key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
                 {item.name}
               </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Log in <span aria-hidden="true">&rarr;</span>
+            <a href="https://forms.gle/YEmqpvWMTEA1X2ye9" className="text-sm font-semibold leading-6 text-gray-900">
+              Add an Activity <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </nav>
@@ -85,10 +85,10 @@ export default function Header() {
                 </div>
                 <div className="py-6">
                   <a
-                    href="#"
+                    href="https://forms.gle/YEmqpvWMTEA1X2ye9"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Log in
+                    Add an Activity
                   </a>
                 </div>
               </div>
