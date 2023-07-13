@@ -262,7 +262,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.gradeState && 
-                                    <>
+                                    <div className="pt-2">
                                         {gradeItems.map((item) => {
                                             return (
                                                 <div className="w-full group relative">
@@ -278,7 +278,7 @@ export default function Extracurriculars(props) {
                                                 
                                             )
                                         })}
-                                    </>                                    
+                                    </div>                                    
                                 }
 
 
@@ -292,7 +292,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.environmentState && 
-                                    <>
+                                    <div className="pt-2">
                                     <div className="w-full">
                                         <div className="flex items-center mb-4">
                                             <input id="inperson" type="checkbox" onChange={() => props.filterChange("inperson")} checked={props.checkVal["inperson"]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
@@ -313,7 +313,7 @@ export default function Extracurriculars(props) {
                                             <label htmlFor="hybrid" className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">Hybrid</label>
                                         </div>
                                     </div>
-                                    </>
+                                    </div>
                                 }
 
 
@@ -327,7 +327,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.companyState && 
-                                    <>
+                                    <div className="pt-2">
                                         {companyItems.map((item) => {
                                             return (
                                                 <div className="w-full">
@@ -338,7 +338,7 @@ export default function Extracurriculars(props) {
                                                 </div>
                                             )
                                         })}
-                                    </>
+                                    </div>
                                 }
 
 
@@ -352,7 +352,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.durationState && 
-                                    <>
+                                    <div className="pt-2">
                                         {durationItems.map((item) => {
                                             return (
                                                 <div className="w-full">
@@ -363,7 +363,7 @@ export default function Extracurriculars(props) {
                                                 </div>
                                             )
                                         })}
-                                    </>
+                                    </div>
                                 }
 
 
@@ -377,7 +377,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.teamIndividualState && 
-                                    <>
+                                    <div className="pt-2">
                                         {teamIndividualItems.map((item) => { 
                                             return (
                                                 <div className="w-full">
@@ -388,7 +388,7 @@ export default function Extracurriculars(props) {
                                                 </div>
                                             )
                                         })}
-                                    </>
+                                    </div>
                                 }
 
 
@@ -402,7 +402,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.skillLevelState && 
-                                    <>
+                                    <div className="pt-2">
                                         {skillLevelItems.map((item) => { 
                                             return (
                                                 <div className="w-full">
@@ -413,7 +413,7 @@ export default function Extracurriculars(props) {
                                                 </div>
                                             )
                                         })}
-                                    </>
+                                    </div>
                                 }
 
 
@@ -427,7 +427,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.locationState && 
-                                    <>
+                                    <div className="pt-2">
                                         {locationItems.map((item) => { 
                                             return (
                                                 <div className="w-full">
@@ -438,7 +438,7 @@ export default function Extracurriculars(props) {
                                                 </div>
                                             )
                                         })}
-                                    </>
+                                    </div>
                                 }
 
 
@@ -452,7 +452,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.activityCategoryState && 
-                                    <>
+                                    <div className="pt-2">
                                         {activityCategoryItems.map((item) => { 
                                             return (
                                                 <div className="w-full">
@@ -463,7 +463,7 @@ export default function Extracurriculars(props) {
                                                 </div>
                                             )
                                         })}
-                                    </>
+                                    </div>
                                 }
 
 
@@ -484,7 +484,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.generalFilterState && 
-                                    <>
+                                    <div className="pt-2">
                                         {generalItems.map((item) => {
                                             return (
                                                 <div className="w-full">
@@ -495,7 +495,7 @@ export default function Extracurriculars(props) {
                                                 </div>
                                             )
                                         })}
-                                    </>
+                                    </div>
                                 }
 
 
@@ -509,7 +509,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.programmingState && 
-                                    <>
+                                    <div className="pt-2">
                                         {programmingItems.map((item) => {
                                             return (
                                                 <div className="w-full">
@@ -520,7 +520,7 @@ export default function Extracurriculars(props) {
                                                 </div>
                                             )
                                         })}
-                                    </>
+                                    </div>
                                 }
 
 
@@ -534,18 +534,18 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.engineeringState && 
-                                    <>
-                                    {engineeringItems.map((item) => {
-                                        return (
-                                            <div className="w-full">
-                                                <div className="flex items-center mb-4">
-                                                    <input id={item.id} name={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                                    <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                    <div className="pt-2">
+                                        {engineeringItems.map((item) => {
+                                            return (
+                                                <div className="w-full">
+                                                    <div className="flex items-center mb-4">
+                                                        <input id={item.id} name={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                                        <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        )
-                                    })}
-                                </>
+                                            )
+                                        })}
+                                    </div>
                                 }
 
 
@@ -559,7 +559,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.mathScienceState && 
-                                    <>
+                                    <div className="pt-2">
                                         {mathScienceItems.map((item) => {
                                             return (
                                                 <div className="w-full">
@@ -570,7 +570,7 @@ export default function Extracurriculars(props) {
                                                 </div>
                                             )
                                         })}
-                                    </>
+                                    </div>
                                 }
                             </div>
 
@@ -582,7 +582,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.businessSocialState && 
-                                    <>
+                                    <div className="pt-2">
                                         {businessSocialItems.map((item) => {
                                             return (
                                                 <div className="w-full">
@@ -593,7 +593,7 @@ export default function Extracurriculars(props) {
                                                 </div>
                                             )
                                         })}
-                                    </>
+                                    </div>
                                 }
                             </div>
 
@@ -605,7 +605,7 @@ export default function Extracurriculars(props) {
                                 </div>
 
                                 {dropState.humanityArtState && 
-                                    <>
+                                    <div className="pt-2">
                                         {humanitiesArtItems.map((item) => {
                                             return (
                                                 <div className="w-full">
@@ -616,7 +616,7 @@ export default function Extracurriculars(props) {
                                                 </div>
                                             )
                                         })}
-                                    </>
+                                    </div>
                                 }
                             </div>
                         </div>
