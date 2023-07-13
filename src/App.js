@@ -127,10 +127,10 @@ function App() {
     }));
 
     setFilterConfig(toggleValueByName(filterConfig, name))
-    console.log(filterConfig)
 
   };
 
+  // RESET FILTER VALUES
   function resetFilterValues() {
     setFilterValues({});
     handleFilterChange(null); // Activate the check filter function to clear the filters
@@ -142,7 +142,9 @@ function App() {
           value: false
         }
       })
-  );
+    );
+
+  
 
   console.log(filterConfig)
 
@@ -157,7 +159,6 @@ function App() {
         const data = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
         setExtracurricularsArray(data);
         setBurnerArray(data);
-        console.log(data);
       } catch (error) {
         console.log(error.message);
       }
@@ -186,6 +187,27 @@ function App() {
     setBurnerArray(filteredData);
   }, [extracurricularsArray, filterValues]);
 
+  useEffect(() => {
+    console.log("Hi filterconfig just got changed")
+  }, [filterConfig])
+
+  function removeTag(tag) {
+
+    const realtag = tag;
+    const foundItem = filterConfig.find(item => item.tag === realtag);
+    let correspondingName
+
+    if (foundItem) {
+      correspondingName = foundItem.name;
+      console.log(correspondingName);
+    } else {
+      console.log("Tag not found");
+    }
+
+    handleFilterChange(correspondingName)
+    
+  }
+
   return (
     <>
       <BrowserRouter>
@@ -201,6 +223,7 @@ function App() {
                 checkVal={filterValues}
                 searchChange={handleSearchChange}
                 allFilters={filterConfig}
+                removeTag={removeTag}
               />
             }
           />
