@@ -77,11 +77,11 @@ export default function Extracurriculars(props) {
       
 
     let gradeItems = [
-        {id: "allgrades", text: "All Grades"},
-        {id: "grade9", text: "Freshman"},
-        {id: "grade10", text: "Sophomore"},
-        {id: "grade11", text: "Junior"},
-        {id: "grade12", text: "Senior"}
+        {id: "allgrades", text: "All Grades", tooltip: "Search for activites for All Grades"},
+        {id: "grade9", text: "Freshman", tooltip: "Search for activites ONLY for Freshman"},
+        {id: "grade10", text: "Sophomore", tooltip: "Search for activites ONLY for Sophomores"},
+        {id: "grade11", text: "Junior", tooltip: "Search for activites ONLY for Juniors"},
+        {id: "grade12", text: "Senior", tooltip: "Search for activites ONLY for Seniors"}
     ]
 
     let companyItems = [
@@ -265,12 +265,17 @@ export default function Extracurriculars(props) {
                                     <>
                                         {gradeItems.map((item) => {
                                             return (
-                                                <div className="w-full">
+                                                <div className="w-full group relative">
                                                     <div className="flex items-center mb-4">
                                                         <input id={item.id} name={item.id} type="checkbox" onChange={() => props.filterChange(item.id)} checked={props.checkVal[item.id]} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                                        <label data-tooltip-target="tooltip-defailt" htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>                                           
+                                                        <label htmlFor={item.id} className="ml-2 text-lg text-gray-900 dark:text-gray-300 font-medium font-outfit">{item.text}</label>                                           
                                                     </div>
+                                                    <div className="pointer-events-none overflow-x-auto text-xs absolute -right-1 top-0 w-[40%] text-center opacity-0 transition-opacity group-hover:opacity-100 bg-blue-200 p-1 rounded-md font-outfit">
+                                                        {item.tooltip}
+                                                    </div>
+                                                    
                                                 </div>
+                                                
                                             )
                                         })}
                                     </>                                    
@@ -631,6 +636,7 @@ export default function Extracurriculars(props) {
                                     </div>                                
                                 </div>                                
                             </div>
+                            
 
                             {showBanner &&                           
                                 <div className="relative mx-8 bg-yellow-300 py-2 my-2 font-outfit px-6 rounded-lg text-yellow-800 text-center shadow-md">
@@ -648,6 +654,7 @@ export default function Extracurriculars(props) {
                                     return (<div className="p-2 bg-blue-300 w-max font-outfit rounded-md shadow-sm">{tag}</div>)
                                 })}
                             </div>
+                            
 
                             {/* Actual EC Components */}
                             <div className="w-full p-4 px-8 h-max flex-col gap-2 flex justify-center"> {/* Main EC holder */}
