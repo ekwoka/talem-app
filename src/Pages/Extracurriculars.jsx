@@ -651,7 +651,7 @@ export default function Extracurriculars(props) {
                             {/* Show Tags */}
                             <div className="mx-10 my-2 flex justify-center gap-2">
                                 {tagsArray.map((tag) => {
-                                    return (<div onClick={() => props.removeTag(tag)} className="p-2 bg-blue-300 w-max font-outfit rounded-md shadow-sm flex items-center justify-between gap-2"><div>{tag}</div> <XCircleIcon className="dropdown-main mr-0"/></div>)
+                                    return (<div onClick={() => props.removeTag(tag)} className="p-2 bg-blue-300 w-max font-outfit rounded-md shadow-sm flex items-center justify-between gap-2"><div>{tag}</div> <XCircleIcon className="dropdown-main mr-0 text-blue-700 hover:text-black"/></div>)
                                 })}
                             </div>
                             

@@ -187,10 +187,6 @@ function App() {
     setBurnerArray(filteredData);
   }, [extracurricularsArray, filterValues]);
 
-  useEffect(() => {
-    console.log("Hi filterconfig just got changed")
-  }, [filterConfig])
-
   function removeTag(tag) {
 
     const realtag = tag;
