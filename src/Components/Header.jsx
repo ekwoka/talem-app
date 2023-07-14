@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import talemLogo from '.././Images/talemLogo.png'
 
 const navigation = [
   { name: 'Homepage', href: '/' },
@@ -21,7 +22,7 @@ export default function Header() {
               <span className="sr-only">Your Company</span>
               <img
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                src={talemLogo}
                 alt=""
               />
             </a>
@@ -45,7 +46,7 @@ export default function Header() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="https://forms.gle/YEmqpvWMTEA1X2ye9" target='_blank' className="text-sm font-semibold leading-6 text-gray-900">
-              Add an Activity <span aria-hidden="true">&rarr;</span>
+              Submit an Activity <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </nav>
@@ -88,7 +89,7 @@ export default function Header() {
                     href="https://forms.gle/YEmqpvWMTEA1X2ye9" target='_blank'
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Add an Activity
+                    Submit an Activity
                   </a>
                 </div>
               </div>
