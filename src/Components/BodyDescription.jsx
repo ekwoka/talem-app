@@ -1,5 +1,5 @@
 import React from "react";
-import { BookmarkIcon, ServerStackIcon, GlobeAltIcon, AdjustmentsHorizontalIcon } from '@heroicons/react/24/outline'
+import { BookmarkIcon, ServerStackIcon, ChatBubbleLeftEllipsisIcon, AdjustmentsHorizontalIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
@@ -21,10 +21,10 @@ const features = [
     icon: BookmarkIcon,
   },
   {
-    name: 'Network with Others',
+    name: 'Join the Community',
     description:
-      'Everything is always better with a friend. Join our discord server to network with like-minded individuals!',
-    icon: GlobeAltIcon,
+      'Find like-minded individuals with the same passions as you on our discord server. As we grow, we need your feedback to help make Talem a better experience for all.',
+    icon: ChatBubbleLeftEllipsisIcon,
   },
 ]
 
@@ -39,7 +39,7 @@ export default function BodyDescription() {
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Talem makes searching for Extracurriculars and Internships easier by allowing you to sort and filter 
-            through our massive database of over 500+ items. 
+            through our massive database of over 500+ items.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
