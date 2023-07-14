@@ -56,6 +56,7 @@ function App() {
     { name: "competition", tag: "Competition", value: false },
     { name: "club", tag: "Club", value: false },
     { name: "program", tag: "Program", value: false },
+    { name: "allsubjects", tag: "All Subjects", value: false },
     { name: "allstem", tag: "All STEM", value: false },
     { name: "allprogramming", tag: "All Programming", value: false },
     { name: "cybersecurity", tag: "Cybersecurity", value: false },

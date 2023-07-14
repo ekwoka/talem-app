@@ -177,6 +177,7 @@ export default function Extracurriculars(props) {
     ]
 
     let generalItems = [
+        {id: "allsubjects", text: "All Subjects"},
         {id: "allstem", text: "All STEM"},
         {id: "allengineering", text: "All Engineering"},
         {id: "allprogramming", text: "All Programming"},
