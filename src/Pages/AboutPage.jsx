@@ -67,7 +67,7 @@ const AboutPage = () => {
     <>
       <Header />
     <section className="bg-white pt-20">
-        <div className="mx-60 rounded-lg shadow-lg flex justify-center items-center bg-gradient-to-r from-purple-700 via-indigo-700 to-blue-700 p-5">
+        <div className="mx-4 md:mx-20 lg:mx-60 rounded-lg shadow-lg flex justify-center items-center bg-gradient-to-r from-purple-700 via-indigo-700 to-blue-700 p-5">
             <div className="text-center w-2/3">
                 <h1 className="text-4xl font-bold tracking-normal text-white sm:text-7xl font-outfit">
                     Our Mission
@@ -116,7 +116,7 @@ const AboutPage = () => {
 
 
       
-      <section className="bg-gradient-to-r from-purple-700 via-indigo-700 to-blue-700 py-10 mx-20 rounded-xl shadow-lg z-40">
+      <section className="bg-gradient-to-r from-purple-700 via-indigo-700 to-blue-700 py-10 mx-5 lg:mx-20 rounded-xl shadow-lg z-40">
         <div className="text-center text-4xl font-bold tracking-normal sm:text-6xl pb-10 text-white font-outfit">So, what are we doing about it?</div>
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">

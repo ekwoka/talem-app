@@ -6,8 +6,7 @@ import talemLogo from '.././Images/talemLogo.png'
 const navigation = [
   { name: 'Homepage', href: '/' },
   { name: 'Extracurriculars', href: '/extracurriculars' },
-  { name: 'Internships', href: '#' },
-  { name: 'About Us', href: '#' },
+  { name: 'About Us', href: '/about' },
 ]
 
 export default function Header() {
@@ -34,12 +33,12 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />  
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a onClick={() => alert("Coming Soon, stay tuned for updates!")} key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
                 {item.name}
               </a>
             ))}
