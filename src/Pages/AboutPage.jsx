@@ -150,7 +150,7 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 ">
           <div className="text-center flex justify-center flex-col items-center">
             <h2 className="text-3xl font-extrabold text-gray-900 font-outfit">Why Choose Talem?</h2>
-            <p className="mt-4 text-lg text-gray-600 w-1/2">
+            <p className="mt-4 text-lg text-gray-600 w-2/3">
               We are committed to providing high school students with an exceptional platform for discovering and engaging in extracurricular activities and internships. Here's why Talem is the right choice for you:
             </p>
           </div>
@@ -158,19 +158,19 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 gap-4 mt-12 md:grid-cols-2 lg:grid-cols-4 bg-gradient-to-r from-purple-700 via-indigo-700 to-blue-700 p-10 rounded-xl">
             <div className="flex items-center justify-evenly p-4 bg-white rounded-lg shadow-lg text-center gap-2">
               <BsUnlockFill className="w-8 h-8 text-purple-700" />
-              <p className="mt-2 text-base font-medium text-gray-900">Equal Access for All</p>
+              <p className="mt-2 text-lg font-outfit font-medium text-gray-900">Equal Access for All</p>
             </div>
             <div className="flex items-center justify-evenly p-4 bg-white rounded-lg shadow-lg text-center gap-2">
               <BsCheckCircleFill className="w-8 h-8 text-purple-700" />
-              <p className="mt-2 text-base font-medium text-gray-900">Wide Range of Opportunities</p>
+              <p className="mt-2 text-lg font-outfit font-medium text-gray-900">Wide Range of Opportunities</p>
             </div>
             <div className="flex items-center justify-evenly p-4 bg-white rounded-lg shadow-lg text-center gap-2">
               <BsChatDotsFill className="w-8 h-8 text-purple-700" />
-              <p className="mt-2 text-base font-medium text-gray-900">Community Support and Engagement</p>
+              <p className="mt-2 text-lg font-outfit font-medium text-gray-900">Community Support and Engagement</p>
             </div>
             <div className="flex items-center justify-evenly p-4 bg-white rounded-lg shadow-lg text-center gap-2">
               <BsClock className="w-8 h-8 text-purple-700" />
-              <p className="mt-2 text-base font-medium text-gray-900">Save Time and Effort</p>
+              <p className="mt-2 text-lg font-outfit font-medium text-gray-900">Save Time and Effort</p>
             </div>
           </div>
         </div>
