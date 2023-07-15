@@ -4,6 +4,9 @@ import {useState, useEffect} from "react"
 import { PlusCircleIcon, MinusCircleIcon, AdjustmentsHorizontalIcon, XCircleIcon, ArrowTopRightOnSquareIcon, TrashIcon, BookmarkIcon } from '@heroicons/react/24/outline'
 import TopButton from "../Components/TopButton";
 import '../index.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './toast.css'
 
 export default function Extracurriculars(props) {
 
@@ -717,7 +720,13 @@ export default function Extracurriculars(props) {
                                             <div className="col-span-1 p-7 flex flex-col gap-4 justify-center items-center">
                                                 <img src={ec.src} alt={`Picture of ${ec.name} logo`} className="w-[60%] lg:w-full shadow-md rounded-xl p-3"/>
                                                 <a href={ec.link} target="_blank" className="ec-buttons">Visit Site <ArrowTopRightOnSquareIcon className="dropdown-main"/> </a>
-                                                <button className="ec-buttons" onClick={() => handleBookmark(ec)}>
+                                                <button
+                                                    className="ec-buttons"
+                                                    onClick={() => {
+                                                    handleBookmark(ec);
+                                                    toast.success("Bookmark successfully updated!")
+                                                    }}
+                                                >
                                                     {bookmarkedItems.some(item => item.id === ec.id) ? "Remove Bookmark" : "Bookmark"}
                                                     {bookmarkedItems.some(item => item.id === ec.id) ? (
                                                     <BookmarkIcon className="dropdown-main hover:text-yellow-500" />
@@ -725,6 +734,11 @@ export default function Extracurriculars(props) {
                                                     <BookmarkIcon className="dropdown-main hover:text-yellow-500" />
                                                     )}
                                                 </button>
+
+                                                <ToastContainer
+                                                     toastClassName="Toastify__toast-container custom-toast"
+                                                     position="bottom-center"
+                                                />
                                             </div>
                                         </div>
                                     ))
