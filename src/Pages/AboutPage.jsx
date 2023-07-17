@@ -37,17 +37,20 @@ const AboutPage = () => {
     {
       percentage: "32%",
       description: "of students from low-income families participate in at least one extracurricular activity during high school, compared to 61% of students from higher-income families.",
-      source: "Child Trends. (2020). 'Indicators of School Crime and Safety: 2019.' Retrieved from [source link]",
+      source: "Child Trends. (2020). 'Indicators of School Crime and Safety: 2019.",
+      soureLink: "https://nces.ed.gov/pubs2020/2020063.pdf"
     },
     {
       percentage: "45%",
       description: "of students from underrepresented communities lack access to quality extracurricular opportunities during high school.",
-      source: "National Center for Education Statistics. (2021). 'The Condition of Education 2021.' Retrieved from [source link]",
+      source: "National Center for Education Statistics. (2021). 'The Condition of Education 2021.'",
+      soureLink: "https://nces.ed.gov/pubs2021/2021144.pdf"
     },
     {
-      percentage: "18%",
+      percentage: "63%",
       description: "of students from rural areas have limited access to extracurricular activities and educational resources.",
-      source: "U.S. Department of Education. (2018). 'Rural Education Toolkit.' Retrieved from [source link]",
+      source: "U.S. Department of Education. (2018). 'Rural Education Toolkit.'",
+      soureLink: "https://www2.ed.gov/rschstat/eval/title-iii/educational-technology-educator-toolkit.pdf"
     },
   ];
 
@@ -91,7 +94,7 @@ const AboutPage = () => {
               <div className="mt-4">
                 {expandedSources.includes(index) ? (
                   <div>
-                    <p className="text-gray-600">{statistic.source}</p>
+                    <p className="text-gray-600">{statistic.source} <a href={statistic.soureLink} className="text-blue-500 hover:underline">Visit Source</a></p>
                     <button
                       className="text-blue-500 underline mt-2 focus:outline-none"
                       onClick={() => toggleSource(index)}

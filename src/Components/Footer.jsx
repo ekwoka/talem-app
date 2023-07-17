@@ -25,8 +25,10 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-4">
-          <p className="text-center text-gray-300 text-sm">
+          <p className="text-center text-gray-300 text-sm font-outfit">
             &copy; {new Date().getFullYear()} All rights reserved.
+            <br/>
+            Built with ❤️ by <a href="https://pranavk.vercel.app" className='hover:underline text-blue-300' target='_blank'>Pranav Konjeti</a>
           </p>
         </div>
       </div>
