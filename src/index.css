@@ -28,7 +28,7 @@ code {
   }
 
   .filter-title {
-    @apply text-xs sm:text-lg md:text-xl lg:text-[1.10em] p-1 flex justify-between items-center font-outfit;
+    @apply text-base sm:text-lg md:text-xl lg:text-[1.10em] p-1 flex justify-between items-center font-outfit;
   }
 
   .ec-tag {

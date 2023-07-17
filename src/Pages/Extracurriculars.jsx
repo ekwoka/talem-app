@@ -4,9 +4,6 @@ import {useState, useEffect} from "react"
 import { PlusCircleIcon, MinusCircleIcon, AdjustmentsHorizontalIcon, XCircleIcon, ArrowTopRightOnSquareIcon, TrashIcon, BookmarkIcon } from '@heroicons/react/24/outline'
 import TopButton from "../Components/TopButton";
 import '../index.css';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import './toast.css'
 
 export default function Extracurriculars(props) {
 
@@ -654,7 +651,7 @@ export default function Extracurriculars(props) {
                             <div className="ml-10 text-lg mt-4 font-outfit">{showBookmarked ? (bookmarkedItems.length > 0 ? bookmarkedItems.length + " Search Result(s)" : "Looks like you got no bookmarks ):") : props.ecArray.length + " Search Results"}</div>
                             
                             {/* Show Tags */}
-                            <div className="mx-10 my-2 flex justify-center gap-2">
+                            <div className="mx-10 my-2 flex justify-center gap-2 flex-wrap">
                                 {tagsArray.map((tag) => {
                                     return (<div onClick={() => props.removeTag(tag)} className="p-2 bg-blue-300 w-max font-outfit rounded-md shadow-sm flex items-center justify-between gap-2"><div>{tag}</div> <XCircleIcon className="dropdown-main mr-0 text-blue-700 hover:text-black"/></div>)
                                 })}
@@ -724,7 +721,6 @@ export default function Extracurriculars(props) {
                                                     className="ec-buttons"
                                                     onClick={() => {
                                                     handleBookmark(ec);
-                                                    toast.success("Bookmark successfully updated!")
                                                     }}
                                                 >
                                                     {bookmarkedItems.some(item => item.id === ec.id) ? "Remove Bookmark" : "Bookmark"}
@@ -734,11 +730,6 @@ export default function Extracurriculars(props) {
                                                     <BookmarkIcon className="dropdown-main hover:text-yellow-500" />
                                                     )}
                                                 </button>
-
-                                                <ToastContainer
-                                                     toastClassName="Toastify__toast-container custom-toast"
-                                                     position="bottom-center"
-                                                />
                                             </div>
                                         </div>
                                     ))

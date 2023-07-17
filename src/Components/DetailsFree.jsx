@@ -25,9 +25,9 @@ export default function DetailsFree() {
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32">
       <div className="max-w-8xl lg:px-0">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-12">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 sm:gap-y-20 xl:mx-0 xl:max-w-none xl:grid-cols-12">
           <div className="lg:pr-8 lg:pt-4 col-span-5 flex justify-center items-center">
-            <div className="lg:max-w-lg">
+            <div className="lg:max-w-lg px-4">
               <h2 className="text-base font-semibold leading-7 text-indigo-600">Pure data at your fingertips.</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">No Paywall, No Sign-Up required.</p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -52,7 +52,7 @@ export default function DetailsFree() {
             <img
               src={talemDemo}
               alt="Product screenshot"
-              className="w-full rounded-xl shadow-md ring-gray-400/10 lg:w-[500px] xl:w-[950px] mx-auto ml-8 lg:ml-0"
+              className="w-[95%] rounded-xl shadow-md ring-gray-400/10 mr-10"
             />
           </div>
         </div>

@@ -32,7 +32,7 @@ const AccessSection = () => {
           />
         </div>
       </div>
-      <div className="relative overflow-hidden rounded-lg shadow-xl mx-20">
+      <div className="relative overflow-hidden rounded-lg shadow-xl mx-5 lg:mx-20">
         <div className="absolute inset-0 bg-cover bg-center filter blur-md hidden" />
         <div className="relative bg-opacity-50 bg-gray-900">
           <div className="max-w-7xl mx-auto px-6 py-24 sm:px-8">
@@ -45,16 +45,16 @@ const AccessSection = () => {
                   activities.
                 </p>
                 <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
-                  <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-lg">
+                  <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-lg flex-wrap text-center">
                     <BsUnlockFill className="w-8 h-8 text-purple-700" />
                     <span className="ml-3 text-xl font-medium text-gray-900">No Paywall</span>
                   </div>
-                  <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-lg">
+                  <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-lg flex-wrap text-center">
                     <BsCheckCircleFill className="w-8 h-8 text-purple-700" />
                     <span className="ml-3 text-xl font-medium text-gray-900">Free for All</span>
                   </div>
-                  <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-lg">
-                    <BsChatDotsFill className="w-8 h-8 text-purple-700" />
+                  <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-lg flex-wrap text-center">
+                    <BsChatDotsFill className="w-8 h-8 text-purple-700 m-2" />
                     <span className="ml-3 text-xl font-medium text-gray-900">Community Support</span>
                   </div>
                 </div>
