@@ -4,6 +4,7 @@ import {useState, useEffect} from "react"
 import { PlusCircleIcon, MinusCircleIcon, AdjustmentsHorizontalIcon, XCircleIcon, ArrowTopRightOnSquareIcon, TrashIcon, BookmarkIcon } from '@heroicons/react/24/outline'
 import TopButton from "../Components/TopButton";
 import '../index.css';
+import DescriptionEC from "../Components/DescriptionEc";
 
 export default function Extracurriculars(props) {
 
@@ -200,6 +201,7 @@ export default function Extracurriculars(props) {
             }
         })
     }
+
 
     return (
 
@@ -676,7 +678,7 @@ export default function Extracurriculars(props) {
                                         <div className="shadow-lg rounded-lg bg-white grid grid-cols-1 lg:grid-cols-4 my-2" key={ec.id}> {/* Individual EC Item holder*/}
                                             <div className="col-span-3 p-10 flex flex-col justify-evenly gap-3"> {/* Col-span-3 EC info */}
                                                 <h1 className="text-2xl md:text-3xl lg:text-5xl font-outfit">{ec.name}</h1>
-                                                <p className="">{ec.description}</p>
+                                                <DescriptionEC description={ec.description} />
                                                 <div className="w-full flex flex-wrap gap-3">
                                                     <div className="ec-tag">{ec.commitment}</div>
                                                     <div className="ec-tag">{ec.environment}</div>
