@@ -12,8 +12,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: white; /* Light blue background color */
-    color: #1e293b; /* Dark navy blue text color */
+    background: white; 
+    color: #1e293b; 
   }
   
   .header {
@@ -25,14 +25,14 @@
   }
   
   .tag-list {
-    width: 70rem; /* Increase the width as desired */
+    width: 70rem; 
     max-width: 90vw;
     display: flex;
     flex-shrink: 0;
     flex-direction: column;
-    gap: 2rem 0; /* Increase the gap between tags as desired */
+    gap: 2rem 0; 
     position: relative;
-    padding: 2rem 0; /* Increase the padding as desired */
+    padding: 2rem 0; 
     overflow: hidden;
   }
   
@@ -50,13 +50,13 @@
     width: max-content;
     display: flex;
     align-items: center;
-    gap: 0 0.5rem; /* Increase the gap between elements inside tags as desired */
-    color: #1e293b; /* Dark navy blue tag text color */
-    font-size: 1.5rem; /* Increase the font size as desired */
-    background-color: #f8fafc; /* Light blue tag background color */
+    gap: 0 0.5rem; 
+    color: #1e293b; 
+    font-size: 1.5rem; 
+    background-color: #f8fafc; 
     border-radius: 0.8rem;
-    padding: 1.5rem 2rem; /* Increase the padding as desired */
-    margin-right: 2rem; /* Increase the margin as desired */
+    padding: 1.5rem 2rem; 
+    margin-right: 2rem; 
     font-family: 'Outfit';
     box-shadow:
       0 0.1rem 0.2rem rgba(0, 0, 0, 0.2),
@@ -66,7 +66,7 @@
   }
   
   .tag span {
-    font-size: 1.8rem; /* Increase the font size as desired */
+    font-size: 1.8rem; 
     color: rgb(32, 64, 91);
   }
   

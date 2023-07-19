@@ -10,6 +10,7 @@ const InfiniteScroll = () => {
     'Beginner-Friendly', 'International', 'History', 'Business', 'STEM', "Biology", "Physics",
     "Leadership", "Marketing", "Entrepreneurship", "Cybersecurity", "Community Service", "Team-Based"
   ];
+  
   const DURATION = 15000;
   const ROWS = 5;
   const TAGS_PER_ROW = 7;
