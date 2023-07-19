@@ -8,11 +8,11 @@ const InfiniteScroll = () => {
   const TAGS = [
     'In-Person', 'All Grades', 'Programming', 'Art/Design', 'Engineering', 'Debate', 'Law',
     'Beginner-Friendly', 'International', 'History', 'Business', 'STEM', "Biology", "Physics",
-    "Leadership", "Marketing", "Entrepreneurship"
+    "Leadership", "Marketing", "Entrepreneurship", "Cybersecurity", "Community Service", "Team-Based"
   ];
   const DURATION = 15000;
   const ROWS = 5;
-  const TAGS_PER_ROW = 6;
+  const TAGS_PER_ROW = 7;
 
   const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
   const shuffle = (arr) => [...arr].sort(() => 0.5 - Math.random());
