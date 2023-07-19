@@ -1,0 +1,92 @@
+/* scroll.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.app {
+    min-width: 98vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: white; /* Light blue background color */
+    color: #1e293b; /* Dark navy blue text color */
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    text-align: center;
+  }
+  
+  .tag-list {
+    width: 70rem; /* Increase the width as desired */
+    max-width: 90vw;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    gap: 2rem 0; /* Increase the gap between tags as desired */
+    position: relative;
+    padding: 2rem 0; /* Increase the padding as desired */
+    overflow: hidden;
+  }
+  
+  .loop-slider .inner {
+    display: flex;
+    width: fit-content;
+    animation-name: loop;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: var(--direction);
+    animation-duration: var(--duration);
+  }
+  
+  .tag {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem; /* Increase the gap between elements inside tags as desired */
+    color: #1e293b; /* Dark navy blue tag text color */
+    font-size: 1.5rem; /* Increase the font size as desired */
+    background-color: #f8fafc; /* Light blue tag background color */
+    border-radius: 0.8rem;
+    padding: 1.5rem 2rem; /* Increase the padding as desired */
+    margin-right: 2rem; /* Increase the margin as desired */
+    font-family: 'Outfit';
+    box-shadow:
+      0 0.1rem 0.2rem rgba(0, 0, 0, 0.2),
+      0 0.1rem 0.5rem rgba(0, 0, 0, 0.3),
+      0 0.2rem 1.5rem rgba(0, 0, 0, 0.4);
+
+  }
+  
+  .tag span {
+    font-size: 1.8rem; /* Increase the font size as desired */
+    color: #5c6a7e;
+  }
+  
+  .fade {
+    pointer-events: none;
+    background: linear-gradient(90deg, white, transparent 10%, transparent 10%, white);
+    position: absolute;
+    inset: 0;
+  }
+  
+  @keyframes loop {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .blue-color {
+    color: rgb(59,130,256);
+  }
+  

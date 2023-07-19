@@ -5,6 +5,7 @@ import DetailsFree from "../Components/DetailsFree";
 import CallToAction from "../Components/CallToAction";
 import Footer from "../Components/Footer";
 import AccessSection from "../Components/AccessSection";
+import TestInfinity from "../Components/TestInfinity"
 
 export default function Homepage() {
     return (
@@ -12,6 +13,7 @@ export default function Homepage() {
             <HeroMain />
             <BodyDescription />
             <DetailsFree />
+            <TestInfinity />
             <AccessSection />
             <CallToAction />
             <Footer />

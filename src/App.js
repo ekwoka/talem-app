@@ -7,6 +7,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { Analytics } from '@vercel/analytics/react';
 import AboutPage from './Pages/AboutPage';
+import TestInfinity from './Components/TestInfinity'
 
 const firebaseConfig = {
   apiKey: "AIzaSyB-R34s08Noa6MHOXTYMH69n8hmJfPflxY",
