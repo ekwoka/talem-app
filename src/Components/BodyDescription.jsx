@@ -5,7 +5,7 @@ const features = [
   {
     name: 'One Massive Database.',
     description:
-      'Talem boasts a massive database with over 500+ Extracurriculars and Internships for you to search and sort through. Find what you liked has never been easier.',
+      'Talem boasts a massive database with over 100+ Extracurriculars and Internships for you to search and sort through. Find what you liked has never been easier.',
     icon: ServerStackIcon,
   },
   {

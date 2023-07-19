@@ -18,7 +18,7 @@ const AboutPage = () => {
     },
     {
       title: "Students have used Talem since its public release",
-      value: "1,000+",
+      value: "1,400+",
       details: "Since Talem went public on July 13th, over 1,000 different individuals have used the website as a source to gain information about highschool extracurriculars and internships",
     },
   ];
