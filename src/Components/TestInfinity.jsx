@@ -33,7 +33,7 @@ const InfiniteScroll = () => {
 
   const Tag = ({ text }) => (
     <div className="tag">
-      <span className="tag-text">#{text}</span>
+      <span className="tag-text hover:underline"><div className='text-slate-400 inline'>#</div>{text}</span>
     </div>
   );
 

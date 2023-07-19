@@ -67,12 +67,12 @@
   
   .tag span {
     font-size: 1.8rem; /* Increase the font size as desired */
-    color: #5c6a7e;
+    color: rgb(59,130,256);
   }
   
   .fade {
     pointer-events: none;
-    background: linear-gradient(90deg, white, transparent 10%, transparent 10%, white);
+    background: linear-gradient(90deg, white, transparent 50%, transparent 50%, white);
     position: absolute;
     inset: 0;
   }
