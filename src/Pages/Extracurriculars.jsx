@@ -645,7 +645,7 @@ export default function Extracurriculars(props) {
                                 <div className="relative mx-8 bg-yellow-300 py-2 my-2 font-outfit px-6 rounded-lg text-yellow-800 text-center shadow-md">
                                     <div className="absolute text-3xl top-0 right-[8px] text-yellow-800 cursor-pointer rotate-45 hover:text-black" onClick={() => setShowBanner(false)}>+</div>
                                     Hi there, I'm Pranav! I'm the developer of <span className="text-blue-700">Talem</span> and I'm glad you're using it/finding it useful! If you want to support me 
-                                    you can do so by <span className=""><a href="https://pranavk.vercel.app" target="_blank" className="text-blue-700 underline">viewing my portfolio</a>, <a href="https://ko-fi.com/pranavk" target="_blank" className="text-blue-700 underline">buying me a coffee</a>, <a href="https://discord.com" className="text-blue-700 underline" target="_blank">or joining Talem's discord server!</a> </span>
+                                    you can do so by <span className=""><a href="https://pranavk.vercel.app" target="_blank" className="text-blue-700 underline">viewing my portfolio</a>, <a href="https://ko-fi.com/pranavk" target="_blank" className="text-blue-700 underline">buying me a coffee</a>, <a href="https://discord.gg/tP97h8kWUx" className="text-blue-700 underline" target="_blank">or joining Talem's discord server!</a> </span>
                                     (You can get rid of this message by clicking the "X" at the top right. It won't come back, I promise!)
                                 </div>
                             }       

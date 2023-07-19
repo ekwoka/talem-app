@@ -7,6 +7,7 @@ const navigation = [
   { name: 'Homepage', href: '/' },
   { name: 'Extracurriculars', href: '/extracurriculars' },
   { name: 'About Us', href: '/about' },
+  { name: 'Our Community', href: 'https://discord.gg/tP97h8kWUx'}
 ]
 
 export default function Header() {
