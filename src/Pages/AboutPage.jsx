@@ -161,19 +161,19 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 gap-4 mt-12 md:grid-cols-2 lg:grid-cols-4 bg-gradient-to-r from-purple-700 via-indigo-700 to-blue-700 p-10 rounded-xl">
             <div className="flex items-center justify-evenly p-4 bg-white rounded-lg shadow-lg text-center gap-2">
               <BsUnlockFill className="w-8 h-8 text-purple-700" />
-              <p className="mt-2 text-lg font-outfit font-medium text-gray-900">Equal Access for All</p>
+              <p className="text-lg font-outfit font-medium text-gray-900">Equal Access for All</p>
             </div>
             <div className="flex items-center justify-evenly p-4 bg-white rounded-lg shadow-lg text-center gap-2">
               <BsCheckCircleFill className="w-8 h-8 text-purple-700" />
-              <p className="mt-2 text-lg font-outfit font-medium text-gray-900">Wide Range of Opportunities</p>
+              <p className="text-lg font-outfit font-medium text-gray-900">Wide Range of Opportunities</p>
             </div>
             <div className="flex items-center justify-evenly p-4 bg-white rounded-lg shadow-lg text-center gap-2">
               <BsChatDotsFill className="w-8 h-8 text-purple-700" />
-              <p className="mt-2 text-lg font-outfit font-medium text-gray-900">Community Support and Engagement</p>
+              <p className="text-lg font-outfit font-medium text-gray-900">Community Support and Engagement</p>
             </div>
             <div className="flex items-center justify-evenly p-4 bg-white rounded-lg shadow-lg text-center gap-2">
               <BsClock className="w-8 h-8 text-purple-700" />
-              <p className="mt-2 text-lg font-outfit font-medium text-gray-900">Save Time and Effort</p>
+              <p className="text-lg font-outfit font-medium text-gray-900">Save Time and Effort</p>
             </div>
           </div>
         </div>
