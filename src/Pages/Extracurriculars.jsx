@@ -5,6 +5,8 @@ import { PlusCircleIcon, MinusCircleIcon, AdjustmentsHorizontalIcon, XCircleIcon
 import TopButton from "../Components/TopButton";
 import '../index.css';
 import DescriptionEC from "../Components/DescriptionEc";
+import LazyLoad from "react-lazy-load";
+import ECItem from "../Components/ECItem";
 
 export default function Extracurriculars(props) {
 
@@ -675,65 +677,7 @@ export default function Extracurriculars(props) {
                                     </>                                   
                                     ) : (                         
                                     (showBookmarked ? bookmarkedItems : props.ecArray).map((ec) => (
-                                        <div className="shadow-lg rounded-lg bg-white grid grid-cols-1 lg:grid-cols-4 my-2" key={ec.id}> {/* Individual EC Item holder*/}
-                                            <div className="col-span-3 p-10 flex flex-col justify-evenly gap-3"> {/* Col-span-3 EC info */}
-                                                <h1 className="text-2xl md:text-3xl lg:text-5xl font-outfit">{ec.name}</h1>
-                                                <DescriptionEC description={ec.description} />
-                                                <div className="w-full flex flex-wrap gap-3">
-                                                    <div className="ec-tag">{ec.commitment}</div>
-                                                    <div className="ec-tag">{ec.environment}</div>
-                                                    {ec.grade.map((grade) => {
-                                                        return (
-                                                            <div className="ec-tag">{grade}</div>
-                                                        )
-                                                    })}
-
-                                                    {ec.location.map((location) => {
-                                                        return (
-                                                            <div className="ec-tag">{location}</div>
-                                                        )
-                                                    })}
-
-                                                    {ec.skill.map((skill) => {
-                                                        return (
-                                                            <div className="ec-tag">{skill}</div>
-                                                        )
-                                                    })}
-
-                                                    <div className="ec-tag">{ec.soloTeam}</div>
-                                                    <div className="ec-tag">{ec.type}</div>
-
-                                                    {ec.category.map((category) => {
-                                                        return (
-                                                            <div className="ec-tag">{category}</div>
-                                                        )
-                                                    })}
-                                                    
-                                                    {ec.subjects.map((subject) => {
-                                                        return (
-                                                            <div className="ec-tag bg-green-300">{subject}</div>
-                                                        )
-                                                    })}
-                                                </div>
-                                            </div>
-                                            <div className="col-span-1 p-7 flex flex-col gap-4 justify-center items-center">
-                                                <img src={ec.src} alt={`Picture of ${ec.name} logo`} className="w-[60%] lg:w-full shadow-md rounded-xl p-3"/>
-                                                <a href={ec.link} target="_blank" className="ec-buttons">Visit Site <ArrowTopRightOnSquareIcon className="dropdown-main"/> </a>
-                                                <button
-                                                    className="ec-buttons"
-                                                    onClick={() => {
-                                                    handleBookmark(ec);
-                                                    }}
-                                                >
-                                                    {bookmarkedItems.some(item => item.id === ec.id) ? "Remove Bookmark" : "Bookmark"}
-                                                    {bookmarkedItems.some(item => item.id === ec.id) ? (
-                                                    <BookmarkIcon className="dropdown-main hover:text-yellow-500" />
-                                                    ) : (
-                                                    <BookmarkIcon className="dropdown-main hover:text-yellow-500" />
-                                                    )}
-                                                </button>
-                                            </div>
-                                        </div>
+                                        <ECItem key={ec.id} ec={ec} handleBookmark={handleBookmark} bookmarkedItems={bookmarkedItems} />
                                     ))
                                 )}
                             </div>
