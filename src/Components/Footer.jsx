@@ -19,7 +19,7 @@ export default function Footer() {
             <a href="#" className="text-gray-300 hover:text-white" title="Instagram" onClick={() => alert("Coming Soon...")}>
                 <FaInstagram className="h-6 w-6" />
             </a>
-            <a href="#" className="text-gray-300 hover:text-white" title="Discord" onClick={() => alert("Coming Soon...")}>
+            <a href="https://discord.com/invite/tP97h8kWUx" className="text-gray-300 hover:text-white" title="Discord">
                 <FaDiscord className="h-6 w-6" />   
             </a>
           </div>
