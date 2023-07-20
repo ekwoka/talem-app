@@ -7,7 +7,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { Analytics } from '@vercel/analytics/react';
 import AboutPage from './Pages/AboutPage';
-import TestInfinity from './Components/TestInfinity'
+import JoinPage from './Pages/JoinPage';
 
 const firebaseConfig = {
   apiKey: "AIzaSyB-R34s08Noa6MHOXTYMH69n8hmJfPflxY",
@@ -230,6 +230,11 @@ function App() {
           <Route 
             path='/about'
             element={<AboutPage />}
+          />
+
+          <Route 
+            path='/join'
+            element={<JoinPage />}
           />
 
         </Routes>
