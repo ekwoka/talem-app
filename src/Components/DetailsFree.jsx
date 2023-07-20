@@ -1,6 +1,7 @@
 import { React } from 'react';
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid';
 import talemDemo from '.././Images/talemDemo.png';
+import LazyLoad from 'react-lazy-load';
 
 const features = [
   {
@@ -49,11 +50,13 @@ export default function DetailsFree() {
             </div>
           </div>
           <div className="col-span-7 flex justify-start items-center">
-            <img
+            <LazyLoad>
+              <img
               src={talemDemo}
               alt="Product screenshot"
               className="w-[95%] rounded-xl shadow-md ring-gray-400/10 mr-10"
-            />
+              />
+            </LazyLoad>
           </div>
         </div>
       </div>
