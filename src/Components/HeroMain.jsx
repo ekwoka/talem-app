@@ -1,24 +1,21 @@
-import React from "react";
-import '../index.css';
-import logoImage from "../Images/talem-logo.png"
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Header from "./Header";
+import { Dialog } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import React from 'react';
+import { useState } from 'react';
 
+import logoImage from '../Images/talem-logo.png';
+import '../index.css';
+import Header from './Header';
 
 export default function HeroMain() {
-
   return (
     <>
       <Header />
       <div className="bg-white">
-
         <div className="relative isolate px-6 lg:px-8">
           <div
             className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-            aria-hidden="true"
-          >
+            aria-hidden="true">
             <div
               className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
               style={{
@@ -28,11 +25,12 @@ export default function HeroMain() {
             />
           </div>
           <div className="mx-auto max-w-4xl py-32 sm:py-48 lg:py-46">
-            
-          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+            <div className="hidden sm:mb-8 sm:flex sm:justify-center">
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                Our Extracurricular Database just opened! {' '}
-                <a href="/extracurriculars" className="font-semibold text-indigo-600">
+                Our Extracurricular Database just opened!{' '}
+                <a
+                  href="/extracurriculars"
+                  className="font-semibold text-indigo-600">
                   <span className="absolute inset-0" aria-hidden="true" />
                   Check it out <span aria-hidden="true">&rarr;</span>
                 </a>
@@ -41,21 +39,25 @@ export default function HeroMain() {
 
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-7xl ">
-                Meet <span className="text-blue-500">Talem</span>, <span className="italic underline">your</span> guide to highschool extracurriculars and internships
+                Meet <span className="text-blue-500">Talem</span>,{' '}
+                <span className="italic underline">your</span> guide to
+                highschool extracurriculars and internships
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                  Discovering the perfect extracurriculars and internships can be daunting, 
-                  which is why Talem streamlines the process, making it effortless to 
-                  find the activities that align with your interests and goals.
+                Discovering the perfect extracurriculars and internships can be
+                daunting, which is why Talem streamlines the process, making it
+                effortless to find the activities that align with your interests
+                and goals.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
                   href="/about"
-                  className="rounded-md bg-blue-600 px-3.5 py-2.5 border-2 border-none text-base font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
+                  className="rounded-md bg-blue-600 px-3.5 py-2.5 border-2 border-none text-base font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                   About Us
                 </a>
-                <a href="/extracurriculars" className="text-base font-semibold leading-6 text-gray-900 hover:text-gray-500 hover:shadow-2xl">
+                <a
+                  href="/extracurriculars"
+                  className="text-base font-semibold leading-6 text-gray-900 hover:text-gray-500 hover:shadow-2xl">
                   Explore the Database <span aria-hidden="true">→</span>
                 </a>
               </div>
@@ -63,8 +65,7 @@ export default function HeroMain() {
           </div>
           <div
             className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-            aria-hidden="true"
-          >
+            aria-hidden="true">
             <div
               className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
               style={{
@@ -76,6 +77,5 @@ export default function HeroMain() {
         </div>
       </div>
     </>
-  )
+  );
 }
-
