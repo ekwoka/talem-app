@@ -25,7 +25,6 @@
     <li><strong>Wide Range of Opportunities:</strong> Talem offers a diverse array of extracurricular activities and internships to cater to various interests and talents.</li>
     <li><strong>Equal Access for All:</strong> We are committed to breaking barriers and ensuring that students from all socioeconomic backgrounds can access the same high-quality opportunities.</li>
     <li><strong>Community Support and Engagement:</strong> Talem fosters a vibrant and supportive community that encourages collaboration, mentorship, and networking among students.</li>
-    <li><strong>Personalized Recommendations:</strong> Our platform utilizes advanced algorithms to provide personalized activity recommendations based on students' interests and skills.</li>
     <li><strong>Save Time and Effort:</strong> Talem simplifies the process of finding and applying for extracurricular activities, saving students time and effort.</li>
   </ul>
 
